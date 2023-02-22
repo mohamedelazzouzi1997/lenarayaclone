@@ -31,7 +31,8 @@
                                     <a class="dropdown-item link-hover text-white"
                                         href="{{ route('internationale') }}">Cuisine
                                         Internationale</a>
-                                    <a class="dropdown-item link-hover text-white" href="special-dishes.html">Cuisine
+                                    <a class="dropdown-item link-hover text-white"
+                                        href="{{ route('cuisine-japonais') }}">Cuisine
                                         Japonaise</a>
                                 </div>
                             </li>

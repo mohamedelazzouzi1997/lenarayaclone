@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/international', function () {
     return view('clients.pages.internationale');
 })->name('internationale');
+
+Route::get('/cuisine-japonais', function () {
+    return view('clients.pages.cuisine-japonais');
+})->name('cuisine-japonais');
