@@ -17,7 +17,7 @@
         <div id="topdiv"
             class="px-5 slide_photo flex bg-fixed bg-no-repeat justify-center items-center relative md:px-48 h-[400px] md:h-screen bg-cover bg-center "
             style="background-image: url('{{ asset('images/lots-of-various-types-of-sushi-rolls-topped-with-sesame-seeds-close-up-view-scaled.jpg') }}')">
-            <div class="absolute bottom-0 right-0 left-0 top-0 bg-black opacity-40">
+            <div class="absolute bottom-0 right-0 left-0 top-0 bg-black opacity-50">
 
             </div>
             <div data-aos="fade-down" class=" text-white z-10 my-5">

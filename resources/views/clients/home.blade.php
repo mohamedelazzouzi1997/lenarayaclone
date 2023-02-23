@@ -4,6 +4,10 @@
     Home | LE BLOKK
 @endsection
 
+@section('befor-style')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/timepicker.css') }}">
+@endsection
 @section('styles')
 @endsection
 
@@ -14,9 +18,9 @@
     <div id="reservation py-10"
         class="px-5 bg-fixed flex justify-center items-center relative md:px-48 md:h-screen bg-containe bg-top"
         style="background-image: url('{{ asset('images/image1.png') }}')">
-        {{-- <div class="absolute bottom-0 right-0 left-0 top-0 bg-black opacity-40">
+        <div class="absolute bottom-0 right-0 left-0 top-0 bg-black opacity-50">
 
-        </div> --}}
+        </div>
         <div class=" text-white z-10 mb-10 md:mt-20 mt-28">
             <div class="px-3 py-3 opacity-90 bg-black">
                 <form data-aos="fade-up" action="" class="z-20">
@@ -28,7 +32,7 @@
                         <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Email" type="email">
                         <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Telephone" type="text">
                         <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Date" type="text"
-                            datepicker datepicker-autohide datepicker-buttons>
+                            datepicker datepicker-autohide>
                         <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Heure" type="text"
                             id="timepicker">
                         <select class="px-3 py-2 bg-black border-2 border-orange-300" name="" id="">
@@ -144,7 +148,7 @@
                             talentueuse chef.
                         </div>
                         <div class="text-center mx-auto my-5">
-                            <a href="#"
+                            <a href="{{ route('nos-spectacles') }}"
                                 class="border border-orange-400 text-white hover:bg-orange-400 hover:text-black py-3 px-5 rounded">Voir
                                 Nos spectacles</a>
                         </div>
@@ -159,24 +163,25 @@
 @endsection
 
 @section('scripts')
-    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>
+    <script src="{{ asset('js/timepicker.js') }}"></script>
     <script>
         $(document).ready(function() {
             $("#message").click(function() {
                 $("textarea").toggle();
             });
 
-            // $('#timepicker').timepicker({
-            //     timeFormat: 'h:mm p',
-            //     interval: 30,
-            //     minTime: '8',
-            //     maxTime: '2:00pm',
-            //     defaultTime: '11',
-            //     startTime: '08:00',
-            //     dynamic: false,
-            //     dropdown: true,
-            //     scrollbar: true,
-            // });
+            $('#timepicker').timepicker({
+                timeFormat: 'h:mm p',
+                interval: 30,
+                minTime: '8',
+                maxTime: '2:00pm',
+                defaultTime: '11',
+                startTime: '08:00',
+                dynamic: false,
+                dropdown: true,
+                scrollbar: true,
+            });
 
         });
     </script>

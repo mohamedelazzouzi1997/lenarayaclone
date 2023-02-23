@@ -24,3 +24,7 @@ Route::get('/international', function () {
 Route::get('/cuisine-japonais', function () {
     return view('clients.pages.cuisine-japonais');
 })->name('cuisine-japonais');
+
+Route::get('/nos-spectacles', function () {
+    return view('clients.pages.nos-spectacles');
+})->name('nos-spectacles');
