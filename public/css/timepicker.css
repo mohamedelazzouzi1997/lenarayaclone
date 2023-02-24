@@ -28,9 +28,9 @@
 .ui-timepicker-standard {
     font-family: Verdana, Arial, sans-serif;
     font-size: 1.1em;
-    background-color: #FFF;
+    background-color: black;
     border: 1px solid #AAA;
-    color: #222;
+    color: #EB8C3E;
     margin: 0;
     padding: 2px
 }
@@ -68,6 +68,18 @@
 
 .ui-timepicker-no-scrollbar .ui-timepicker {
     border: none
+}
+
+.datepicker-cell {
+    color: #EB8C3E !important;
+}
+
+.datepicker-picker {
+    background-color: #000000 !important;
+}
+
+.bg-white {
+    background-color: #000000 !important;
 }
 
 

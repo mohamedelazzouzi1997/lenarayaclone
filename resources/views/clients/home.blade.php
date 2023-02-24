@@ -6,9 +6,9 @@
 
 @section('befor-style')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('css/timepicker.css') }}">
 @endsection
 @section('styles')
+    <link rel="stylesheet" href="{{ asset('css/timepicker.css') }}">
 @endsection
 
 @section('content')
@@ -27,6 +27,7 @@
                     <h2 class="text-orange-300 font-extrabold text-5xl text-center italic fw-josef fw">RESERVATION</h2>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 p-2 text-center gap-4">
+                        <input type="hidden" name="origin" value="{{ request()->origin }}">
                         <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Nom Complet"
                             type="text">
                         <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Email" type="email">
@@ -37,19 +38,9 @@
                             id="timepicker">
                         <select class="px-3 py-2 bg-black border-2 border-orange-300" name="" id="">
                             <option selected disabled value="">Nombre De personnage</option>
-                            <option value="">1 Personne</option>
-                            <option value="">1 Personne</option>
-                            <option value="">2 Personne</option>
-                            <option value="">3 Personne</option>
-                            <option value="">4 Personne</option>
-                            <option value="">5 Personne</option>
-                            <option value="">6 Personne</option>
-                            <option value="">7 Personne</option>
-                            <option value="">8 Personne</option>
-                            <option value="">9 Personne</option>
-                            <option value="">10 Personne</option>
-                            <option value="">11 Personne</option>
-                            <option value="">12 Personne</option>
+                            @for ($i = 1; $i <= 20; $i++)
+                                <option value="{{ $i }}">{{ $i }} Personne</option>
+                            @endfor
                         </select>
                         <div class="text-orange-200">
                             <div id="message" class="cursor-pointer text-orange-300">Ajoute un Message</div>
@@ -174,10 +165,10 @@
             $('#timepicker').timepicker({
                 timeFormat: 'h:mm p',
                 interval: 30,
-                minTime: '8',
-                maxTime: '2:00pm',
-                defaultTime: '11',
-                startTime: '08:00',
+                minTime: '8pm',
+                maxTime: '11:30pm',
+                defaultTime: '8pm',
+                startTime: '08:00pm',
                 dynamic: false,
                 dropdown: true,
                 scrollbar: true,
