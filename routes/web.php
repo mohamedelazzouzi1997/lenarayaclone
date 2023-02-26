@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReservationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,16 @@ Route::get('/cuisine-japonais', function () {
 Route::get('/nos-spectacles', function () {
     return view('clients.pages.nos-spectacles');
 })->name('nos-spectacles');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+//reservation route
+
+Route::post('reservation/store',[ReservationController::class,'store'])->name('reservation.store');

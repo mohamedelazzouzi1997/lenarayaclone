@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/timepicker.css') }}">
 @endsection
 @section('styles')
+    <link rel="stylesheet" href="{{ asset('toaster/toaster.css') }}">
 @endsection
 
 @section('content')
@@ -23,37 +24,43 @@
         </div>
         <div class=" text-white z-10 mb-10 md:mt-20 mt-28">
             <div class="px-3 py-3 opacity-90 bg-black">
-                <form data-aos="fade-up" action="" class="z-20">
+                <form action="{{ route('reservation.store') }}" method="post" class="z-20">
+                    @csrf
+                    <input type="hidden" name="origin" value="{{ request()->origin ?? 'direct' }}">
                     <h2 class="text-orange-300 font-extrabold text-5xl text-center italic fw-josef fw">RESERVATION</h2>
-
+                    @if (Session::has('success'))
+                        <div class="text-green-500 text-center bg-black px-3 py-2">
+                            <i class="fa-regular fa-circle-check"></i> {{ Session::get('success') }}
+                        </div>
+                    @endif
                     <div class="grid grid-cols-1 md:grid-cols-2 p-2 text-center gap-4">
-                        <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Nom Complet"
-                            type="text">
-                        <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Email" type="email">
-                        <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Telephone" type="text">
-                        <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Date" type="text"
-                            datepicker datepicker-autohide>
-                        <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Heure" type="text"
-                            id="timepicker">
-                        <select class="px-3 py-2 bg-black border-2 border-orange-300" name="" id="">
+
+                        <input required name="name" value="{{ old('name') }}"
+                            class="px-3 py-3 border-2 border-orange-300 @error('name') border-red-500 @enderror bg-black "
+                            placeholder="Nom Complet" type="text">
+                        <input required name="email" value="{{ old('email') }}"
+                            class="px-3 py-3 bg-black border-2 border-orange-300  @error('email') border-red-500 @enderror"
+                            placeholder="Email" type="email">
+                        <input required name="phone" value="{{ old('phone') }}"
+                            class="px-3 py-3 bg-black border-2 border-orange-300  @error('phone') border-red-500 @enderror"
+                            placeholder="Telephone" type="text">
+                        <input required name="date" value="{{ old('date') }}"
+                            class="px-3 py-3 bg-black border-2 border-orange-300  @error('date') border-red-500 @enderror"
+                            placeholder="Date" type="text" datepicker datepicker-autohide>
+                        <input required name="time" value="{{ old('time') }}"
+                            class="px-3 py-3 bg-black border-2 border-orange-300  @error('time') border-red-500 @enderror"
+                            placeholder="Heure" type="text" id="timepicker">
+                        <select required name="number_of_persons"
+                            class="px-3 py-2 bg-black border-2 border-orange-300  @error('number_of_persons') border-red-500 @enderror"
+                            id="">
                             <option selected disabled value="">Nombre De personnage</option>
-                            <option value="">1 Personne</option>
-                            <option value="">1 Personne</option>
-                            <option value="">2 Personne</option>
-                            <option value="">3 Personne</option>
-                            <option value="">4 Personne</option>
-                            <option value="">5 Personne</option>
-                            <option value="">6 Personne</option>
-                            <option value="">7 Personne</option>
-                            <option value="">8 Personne</option>
-                            <option value="">9 Personne</option>
-                            <option value="">10 Personne</option>
-                            <option value="">11 Personne</option>
-                            <option value="">12 Personne</option>
+                            @for ($i = 1; $i <= 20; $i++)
+                                <option value="{{ $i }}">{{ $i }} Personne</option>
+                            @endfor
                         </select>
                         <div class="text-orange-200">
                             <div id="message" class="cursor-pointer text-orange-300">Ajoute un Message</div>
-                            <textarea placeholder="Votre Message" name=""
+                            <textarea placeholder="Votre Message" value="{{ old('message') }}" name="message"
                                 class="px-3 w-full py-3 bg-black border-2 border-orange-300 hidden"></textarea>
                         </div>
                     </div>
@@ -61,7 +68,7 @@
                         Toute réservation en ligne sera confirmée par mail dans les plus brefs délais.
                     </div>
                     <div class="text-center">
-                        <button
+                        <button type="submit"
                             class="px-5 rounded py-2 bg-orange-400 font-semibold hover:bg-orange-200 text-black">RESERVER</button>
                     </div>
                 </form>
@@ -165,7 +172,25 @@
 @section('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>
     <script src="{{ asset('js/timepicker.js') }}"></script>
+    <script src="{{ asset('toaster/toaster.js') }}"></script>
     <script>
+        const ToasterOptions = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
         $(document).ready(function() {
             $("#message").click(function() {
                 $("textarea").toggle();
@@ -174,10 +199,10 @@
             $('#timepicker').timepicker({
                 timeFormat: 'h:mm p',
                 interval: 30,
-                minTime: '8',
-                maxTime: '2:00pm',
-                defaultTime: '11',
-                startTime: '08:00',
+                minTime: '8pm',
+                maxTime: '11:30pm',
+                defaultTime: '8pm',
+                startTime: '08:00pm',
                 dynamic: false,
                 dropdown: true,
                 scrollbar: true,
@@ -185,4 +210,10 @@
 
         });
     </script>
+    @if (Session::has('success'))
+        <script>
+            toastr.success("{{ Session::get('success') }}");
+            toastr.options = ToasterOptions;
+        </script>
+    @endif
 @endsection

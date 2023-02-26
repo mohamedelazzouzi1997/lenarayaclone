@@ -551,3 +551,7 @@ a:hover {
 .video-section:hover i {
     color: #ffffff !important;
 }
+
+.bg-white {
+    background-color: #222 !important;
+}

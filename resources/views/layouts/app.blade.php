@@ -38,10 +38,8 @@
             } else {
                 $('#toTop').fadeOut();
                 $('#navtop').removeClass('md:fixed md:top-0 md:z-50')
-
             }
         });
-
         $("#toTop").click(function() {
             $("html, body").animate({
                 scrollTop: 0
