@@ -55,8 +55,6 @@
                                 <select required name="number_of_persons"
                                     class="px-3 py-2 bg-black border-2 border-orange-300  @error('number_of_persons') border-red-500 @enderror"
                                     id="">
-                                    =======
-
                                     <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Nom Complet"
                                         type="text">
                                     <input class="px-3 py-3 bg-black border-2 border-orange-300" placeholder="Email"
@@ -69,7 +67,6 @@
                                         type="text" id="timepicker">
                                     <select class="px-3 py-2 bg-black border-2 border-orange-300" name=""
                                         id="">
-                                        >>>>>>> 7c706852bdfedae9ad63ac6ef88d9fdebaec8cda
                                         <option selected disabled value="">Nombre De personnage</option>
                                         @for ($i = 1; $i <= 20; $i++)
                                             <option value="{{ $i }}">{{ $i }} Personne</option>
