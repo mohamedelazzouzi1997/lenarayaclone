@@ -5,14 +5,14 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 z-10">
             <div class="text-center">
-                <img data-aos="fade-down" class="mx-auto" src="{{ asset('images/logo.png') }}" alt="logo">
+                <img data-aos="fade-down" class="" src="{{ asset('images/logo.png') }}" alt="logo">
                 <div data-aos="fade-down" id="about" class="text-2xl fw-josef text-white text-start font-extrabold">
                     Le Blokk est un restaurant bar international, marocain et japonais à thème, musical Live show qui
                     vous
                     propose un dîner spectacle incontournable à la Palmeraie dans un cadre exceptionnel.
                 </div>
                 <div class="text-center mx-auto">
-                    <p data-aos="fade-down" class="text-orange-300 font-extrabold text-3xl text-center my-5 fw-JOSEF">
+                    <p data-aos="fade-down" class="text-orange-300 font-extrabold text-3xl text-start my-5 fw-JOSEF">
                         INFOLINE
                     </p>
                     <ul data-aos="fade-down" class="text-start text-white">
