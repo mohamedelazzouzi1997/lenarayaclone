@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Home | LE BLOKK
+    Home | LE BLOKKk
 @endsection
 
 @section('befor-style')
