@@ -40,6 +40,9 @@ Route::post('reservation/store',[ReservationController::class,'store'])->name('r
 Route::middleware(['auth'])->group(function () {
     Route::get('/reservation', [ReservationController::class,'index'])->name('dashboard');
     Route::get('/reservation/{id}/details', [ReservationController::class,'show'])->name('reservation.show');
+    Route::get('/reservation/{id}/delete', [ReservationController::class,'delete'])->name('reservation.delete');
+    Route::get('/reservation/{id}/reject', [ReservationController::class,'reject'])->name('reservation.reject');
+    Route::get('/reservation/{id}/confirm', [ReservationController::class,'confirm'])->name('reservation.confirm');
 });
 
 

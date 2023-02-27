@@ -59,4 +59,26 @@ class ReservationController extends Controller
 
         return back();
     }
+
+    public function reject(Request $request,$id){
+        $res = Resevation::findOrfail($id)->update([
+            'status' => 'declined'
+        ]);
+        session()->flash('warning','Rservation a été Rejecté avec succée');
+        return back();
+    }
+
+    public function confirm(Request $request,$id){
+        $res = Resevation::findOrfail($id)->update([
+            'status' => 'confirmed'
+        ]);
+        session()->flash('success','Rservation a été Confirmé avec succée');
+        return back();
+    }
+    public function delete($id){
+        $res = Resevation::findOrfail($id)->delete();
+
+        session()->flash('delete','Rservation a été supprimé avec succée');
+        return to_route('dashboard');
+    }
 }
