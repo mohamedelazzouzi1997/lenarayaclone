@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cookie;
 use App\Http\Controllers\ReservationController;
 
 
@@ -15,10 +16,6 @@ use App\Http\Controllers\ReservationController;
 |
 */
 
-Route::get('/', function () {
-    return view('clients.home');
-});
-
 Route::get('/international', function () {
     return view('clients.pages.internationale');
 })->name('internationale');
@@ -30,16 +27,33 @@ Route::get('/cuisine-japonais', function () {
 Route::get('/nos-spectacles', function () {
     return view('clients.pages.nos-spectacles');
 })->name('nos-spectacles');
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+
 
 //reservation route
 
 Route::post('reservation/store',[ReservationController::class,'store'])->name('reservation.store');
+
+
+
+
+//admin routes
+Route::middleware(['auth'])->group(function () {
+    Route::get('/reservation', [ReservationController::class,'index'])->name('dashboard');
+    Route::get('/reservation/{id}/details', [ReservationController::class,'show'])->name('reservation.show');
+});
+
+
+Route::get('/{origin?}', function ($origin = 'direct') {
+    $minutes = 15;
+
+    if(Cookie::get('leblokk_origin')){
+        $origin = Cookie::get('leblokk_origin');
+        return view('clients.home',compact('origin'));
+
+    }else{
+        Cookie::queue('leblokk_origin', $origin, $minutes);
+
+    }
+
+    return view('clients.home',compact('origin'));
+});

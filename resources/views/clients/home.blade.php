@@ -28,7 +28,8 @@
                 <div class="px-3 py-3 opacity-90 bg-black">
                     <form action="{{ route('reservation.store') }}" method="post" class="z-20">
                         @csrf
-                        <input type="hidden" name="origin" value="{{ request()->origin ?? 'direct' }}">
+                        <input type="hidden" name="origin" value="{{ $origin }}">
+
                         <h2 class="text-orange-300 font-extrabold text-5xl text-center italic fw-josef fw">RESERVATION</h2>
                         @if (Session::has('success'))
                             <div class="text-green-500 text-center bg-black px-3 py-2">
@@ -36,7 +37,6 @@
                             </div>
                         @endif
                         <div class="grid grid-cols-1 md:grid-cols-2 p-2 text-center gap-4">
-                            <input type="hidden" name="origin" value="{{ request()->origin }}">
                             <input name="name" value="{{ old('name') }}"
                                 class="px-3 py-3 border-2 border-orange-300 @error('name') border-red-500 @enderror bg-black "
                                 placeholder="Nom Complet" type="text">
@@ -169,7 +169,7 @@
                                 talentueuse chef.
                             </div>
                             <div class="text-center mx-auto my-5">
-                                <a href="{{ route('nos-spectacles') }}"
+                                <a href="{{ route('nos-spectacles', Cookie::get('origin')) }}"
                                     class="border border-orange-400 text-white hover:bg-orange-400 hover:text-black py-3 px-5 rounded">Voir
                                     Nos spectacles</a>
                             </div>

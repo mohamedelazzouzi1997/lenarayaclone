@@ -10,7 +10,7 @@ class Resevation extends Model
     use HasFactory;
 
     protected $fillable = [
-        'full name',
+        'full_name',
         'email',
         'phone',
         'date',
