@@ -43,9 +43,9 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 text-black border-b border-gray-700">
                     <div class="font-extrabold text-start text-lg">Email :</div>
                     <div class="text-start md:col-span-3 text-gray-700"> {{ $res->email }}
-                        <a href="" class="text-blue-700">
+                        {{-- <a href="" class="text-blue-700">
                             Send Email
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 text-black border-b border-gray-700">
