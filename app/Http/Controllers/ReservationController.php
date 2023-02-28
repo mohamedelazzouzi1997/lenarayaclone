@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Resevation;
 use Illuminate\Http\Request;
+use App\Mail\ReservationEmail;
+use Illuminate\Support\Facades\Mail;
 
 class ReservationController extends Controller
 {
@@ -21,7 +23,14 @@ class ReservationController extends Controller
     }
 
     public function store(Request $request){
-        // dd(true);
+        $request->validate([
+            'name'=> 'required' ,
+            'email'=> 'required' ,
+            'phone'=> 'required' ,
+            'date'=> 'required' ,
+            'time'=> 'required' ,
+            'number_of_persons'=> 'required' ,
+        ]);
         $origin_array = [
             'tk' => 'tiktok',
             'in' => 'instagrame',
@@ -35,14 +44,7 @@ class ReservationController extends Controller
                 break;
             }
         }
-        $request->validate([
-            'name'=> 'required' ,
-            'email'=> 'required' ,
-            'phone'=> 'required' ,
-            'date'=> 'required' ,
-            'time'=> 'required' ,
-            'number_of_persons'=> 'required' ,
-        ]);
+
 
         $res = Resevation::create([
             'full_name'=> $request->name ,
@@ -61,22 +63,54 @@ class ReservationController extends Controller
     }
 
     public function reject(Request $request,$id){
-        $res = Resevation::findOrfail($id)->update([
+
+        $res = Resevation::findOrfail($id);
+
+        $reservation_mail = $res->email;
+        $username = $res->full_name;
+        $email_message = $request->emailMessage;
+
+
+        $res->update([
             'status' => 'declined'
         ]);
+
+        if($res)
+            Mail::to($reservation_mail)->send(new ReservationEmail($email_message,$username));
+
         session()->flash('warning','Rservation a été Rejecté avec succée');
         return back();
     }
 
     public function confirm(Request $request,$id){
-        $res = Resevation::findOrfail($id)->update([
+
+        $res = Resevation::findOrfail($id);
+
+        $username = $res->full_name;
+        $reservation_mail = $res->email;
+        $email_message = $request->emailMessage;
+
+        $res->update([
             'status' => 'confirmed'
         ]);
+
+        if($res)
+            Mail::to($reservation_mail)->send(new ReservationEmail($email_message,$username));
+
         session()->flash('success','Rservation a été Confirmé avec succée');
         return back();
     }
-    public function delete($id){
-        $res = Resevation::findOrfail($id)->delete();
+    public function delete(Request $request,$id){
+        $res = Resevation::findOrfail($id);
+
+        $username = $res->full_name;
+        $reservation_mail = $res->email;
+        $email_message = $request->emailMessage;
+
+        $res->delete();
+
+        if($res)
+            Mail::to($reservation_mail)->send(new ReservationEmail($email_message,$username));
 
         session()->flash('delete','Rservation a été supprimé avec succée');
         return to_route('dashboard');

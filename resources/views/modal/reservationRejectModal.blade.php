@@ -11,7 +11,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="rejectForm" method="get" action="{{ route('reservation.confirm', $res->id) }}"
+                        <form id="rejectForm" method="post" action="{{ route('reservation.reject', $res->id) }}"
                             class="form-group">
                             @csrf
                             <textarea class="w-full form-control" name="emailMessage" placeholder="Email Message" id="" cols="30"
@@ -22,7 +22,7 @@
                         <button type="button"
                             class="py-1 hover:bg-red-600 float-right px-3 bg-red-500 text-white rounded-md"
                             data-dismiss="modal">Close</button>
-                        <button form="rejectForm" type="button"
+                        <button form="rejectForm" type="submit"
                             class="py-1 hover:bg-yellow-600 float-right px-3 bg-yellow-500 text-white rounded-md">send
                             email de rejection</button>
                     </div>

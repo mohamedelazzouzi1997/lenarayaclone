@@ -23,8 +23,7 @@
 <body class="bg-slate-100">
     @include('navigation-menu')
     @yield('content')
-    <button id="toTop" class="fixed z-30 rounded-md bottom-5 right-5 px-3 py-2 bg-orange-300 text-white"><i
-            class="fa-solid fa-chevron-up"></i></button>
+
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>

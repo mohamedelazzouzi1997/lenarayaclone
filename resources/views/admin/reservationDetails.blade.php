@@ -5,6 +5,7 @@
 @endsection
 
 @section('styles')
+    <link rel="stylesheet" href="{{ asset('toaster/toaster.css') }}">
 @endsection
 
 @section('content')
@@ -20,13 +21,13 @@
                 <span>
                     {{ $res->created_at->format('F d, Y') . ' ' . $res->time }}
                 </span>
-                <span class="mx-6">
+                <span class="mx-6 block md:inline">
                     <button type="button" data-toggle="modal" data-target="#emailConfirmModal"
                         class="py-1 hover:bg-green-600 px-3 bg-green-500 text-white rounded-md">Confirme</button>
                     <button type="button" data-toggle="modal" data-target="#emailRejectModal"
                         class="py-1 hover:bg-yellow-600 px-3 bg-yellow-500 text-white rounded-md">Reject</button>
-                    <a href="{{ route('reservation.delete', $res->id) }}"
-                        class="py-1 hover:bg-red-600 float-right px-3 bg-red-500 text-white rounded-md">Delete</a>
+                    <button type="button" data-toggle="modal" data-target="#emailDeletemModal"
+                        class="py-1 hover:bg-red-600 float-right px-3 bg-red-500 text-white rounded-md">Delete</button>
                 </span>
             </div>
             <div class="my-3 text-center space-y-5">
@@ -65,8 +66,47 @@
         </div>
         @include('modal.reservationConfirmModal')
         @include('modal.reservationRejectModal')
+        @include('modal.reservationDeleteModal')
     @endsection
 
 
     @section('scripts')
+        <script src="{{ asset('toaster/toaster.js') }}"></script>
+        <script>
+            const ToasterOptions = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": true,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+        </script>
+        @if (Session::has('success'))
+            <script>
+                toastr.success("{{ Session::get('success') }}");
+                toastr.options = ToasterOptions;
+            </script>
+        @endif
+        @if (Session::has('warning'))
+            <script>
+                toastr.warning("{{ Session::get('warning') }}");
+                toastr.options = ToasterOptions;
+            </script>
+        @endif
+        @if (Session::has('delete'))
+            <script>
+                toastr.error("{{ Session::get('delete') }}");
+                toastr.options = ToasterOptions;
+            </script>
+        @endif
     @endsection
