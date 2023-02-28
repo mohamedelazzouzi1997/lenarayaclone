@@ -5,16 +5,22 @@
 @endsection
 @section('styles')
     <link rel="stylesheet" href="{{ asset('toaster/toaster.css') }}">
+    <style>
+        tr.hover {
+            cursor: pointer;
+            /* whatever other hover styles you want */
+        }
+    </style>
 @endsection
 
 @section('content')
-    <div class="py-12">
+    <div class="py-12 ">
         <div class="px-3 mx-auto">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="table-responsive  text-black p-4">
                     <h1 class="text-center my-6 text-5xl">LES RESERVATION</h1>
                     <table class="table table-hover table-bordered">
-                        <thead class="bg-slate-400">
+                        <thead class="bg-slate-700 text-white">
                             <tr>
                                 <th>#</th>
                                 <th>Nom</th>
@@ -25,18 +31,19 @@
                                 <th>N/P</th>
                                 <th>message</th>
                                 <th>Origin</th>
-                                <th>#</th>
+                                {{-- <th>#</th> --}}
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($reservations as $res)
                                 <tr
-                                    class="@if ($res->status == 'declined') bg-red-300
-                                @elseif($res->status == 'confirmed')
-                                bg-teal-200
-                                @else
-                                    bg-yellow-200 @endif">
-                                    <td>{{ $res->id }}</td>
+                                    class="@if ($res->status == 'declined') bg-red-400
+                                        @elseif($res->status == 'confirmed')
+                                        bg-teal-500
+                                        @else
+                                        bg-yellow-400 @endif">
+
+                                    <td><a href="{{ route('reservation.show', $res->id) }}">#{{ $res->id }}</a></td>
                                     <td>{{ $res->full_name }}</td>
                                     <td>{{ $res->email }}</td>
                                     <td>{{ $res->phone }}</td>
@@ -47,18 +54,18 @@
                                     <td>
                                         {{ $res->origin }}
                                     </td>
-                                    <td>
+                                    {{-- <td>
                                         <div class="flex justify-center items-center ">
                                             <a href="{{ route('reservation.show', $res->id) }}" class="btn btn-primary"><i
                                                     class="fa-solid fa-eye"></i></a>
-                                            {{-- <a href="{{ route('reservation.delete', $res->id) }}" class="btn btn-danger"><i
-                                                    class="fa-solid fa-trash"></i></a> --}}
-                                            {{-- <a class="btn btn-warning" href=""><i
+                                            <a href="{{ route('reservation.delete', $res->id) }}" class="btn btn-danger"><i
+                                                    class="fa-solid fa-trash"></i></a>
+                                            <a class="btn btn-warning" href=""><i
                                                     class="fa-solid fa-circle-xmark"></i></a>
                                             <a class="btn btn-success" href=""><i
-                                                    class="fa-solid fa-circle-check"></i></a> --}}
+                                                    class="fa-solid fa-circle-check"></i></a>
                                         </div>
-                                    </td>
+                                    </td> --}}
                                 </tr>
                             @endforeach
                         </tbody>
@@ -75,6 +82,17 @@
 
 @section('scripts')
     <script src="{{ asset('toaster/toaster.js') }}"></script>
+    <script>
+        $('tr').click(function(e) {
+            console.log(e.target);
+            if ($(e.target).is("td"))
+                window.location = $(this).find('a').attr('href');
+            else
+                return;
+        }).hover(function() {
+            $(this).toggleClass('hover');
+        });
+    </script>
     <script>
         const ToasterOptions = {
             "closeButton": false,

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('date');
             $table->string('time');
             $table->string('number_of_persons');
-            $table->string('message')->nullable();
+            $table->text('message')->nullable();
             $table->string('origin');
             $table->string('status')->default('pending');
             $table->timestamps();

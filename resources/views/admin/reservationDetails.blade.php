@@ -14,10 +14,10 @@
         <div
             class="@if ($res->status == 'declined') bg-red-200
                                 @elseif($res->status == 'confirmed')
-                                bg-teal-200
+                                bg-teal-300
                                 @else
                                     bg-yellow-200 @endif overflow-hidden shadow-xl sm:rounded-lg p-6 font-sans">
-            <div class="text-gray-500">
+            <div class="text-gray-50">
                 <span>
                     {{ $res->created_at->format('F d, Y') . ' ' . $res->time }}
                 </span>
