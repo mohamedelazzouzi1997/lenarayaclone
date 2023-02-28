@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 
+@section('title')
+    Reservation | Le Blokk
+@endsection
 @section('styles')
     <link rel="stylesheet" href="{{ asset('toaster/toaster.css') }}">
 @endsection
