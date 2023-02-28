@@ -1,1 +1,1 @@
-<img class="bg-slate-700" src="{{ asset('images/logo.png') }}" alt="logo">
+<img class="bg-slate-500 rounded-md shadow-2xl" src="{{ asset('images/logo.png') }}" alt="logo">
