@@ -23,31 +23,29 @@
             <div data-aos="fade-down" class=" text-white z-10 my-5">
                 <h1 class="text-2xl font-mono md:text-7xl uppercase text-center font-extrabold">un restaurant à expérience
                     UNIque </h1>
-                <p class="text-lg md:text-3xl font-extrabold text-center"> l’ambiance feutrée de nos spectacles </p>
+                <p class="text-lg md:text-3xl font-extrabold text-center mt-10"> l’ambiance feutrée de nos spectacles </p>
             </div>
         </div>
-        <div class="px-6 md:px-40 my-16 text-white">
+        <div class="px-6 md:px-60 my-16 text-white">
             <div class="mx-auto text-center">
-                <h1 class="text-center  italic fw-dancing text-2xl">
+                <h1 class="text-center font-thin  italic fw-dancing text-2xl">
                     Goûtez la différence
                 </h1>
-                <h2 class="text-center text-5xl my-6 font-extrabold text-orange-300">MENU 285 DHS</h2>
+                <h2 class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">MENU 285 DHS</h2>
                 <img class="mx-auto" src="{{ asset('images/line2.png') }}" alt="line">
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-28">
-                <div class="text-center">
-                    <img class="mx-auto rounded" src="{{ asset('images/Calque-100.png') }}" alt="Calque-100">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-16">
+                <div class="text-center flex justify-center items-center">
+                    <img class="mx-auto rounded w-full h-full" src="{{ asset('images/Calque-100.png') }}" alt="Calque-100">
                 </div>
                 <div class="text-white">
                     <div class="my-3">
-                        <h3 class="text-center text-4xl font-extrabold">ENTRÉES 105 DHS</h3>
-                        <h4 class="text-center font-extrabold text-2xl">
-                            (Entrée, plat, dessert)
-                        </h4>
+                        <h3 class="text-center text-2xl font-semibold text-white fw-serif">ENTRÉES 105 DHS</h3>
+                        <h4 class="text-center font-medium text-xl">(Entrée, plat, dessert)</h4>
                     </div>
-                    <div class="space-y-5">
+                    <div class="space-y-5 ">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Blokk bowl au poulet
                             </p>
                             <p class="text-white text-lg">
@@ -56,13 +54,13 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Carpaccio d'artichauts et poulpe mariné
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Mozzarella panée
                             </p>
                             <p class="text-white text-lg">
@@ -71,7 +69,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 œuf poché croustillant
                             </p>
                             <p class="text-white text-lg">
@@ -82,20 +80,20 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-28">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-10">
                 <div class="text-center md:hidden">
-                    <img class="mx-auto rounded" src="{{ asset('images/Supreme-de-volaille-caramelise.jpg') }}"
+                    <img class="mx-auto rounded w-full" src="{{ asset('images/Supreme-de-volaille-caramelise.jpg') }}"
                         alt="Supreme-de-volaille-caramelise">
                 </div>
                 <div class="text-white">
                     <div class="my-3">
-                        <h3 class="text-center text-4xl font-extrabold">
+                        <h3 class="text-center text-2xl font-semibold text-white fw-serif">
                             PLAT 140 DHS
                         </h3>
                     </div>
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Suprême de volaille caramélisé
                             </p>
                             <p class="text-white text-lg">
@@ -104,7 +102,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Filet de saint-pierre
                             </p>
                             <p class="text-white text-lg">
@@ -113,7 +111,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Riz sauté façons thai
                             </p>
                             <p class="text-white text-lg">
@@ -122,36 +120,36 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center hidden md:block">
-                    <img class="mx-auto rounded" src="{{ asset('images/Supreme-de-volaille-caramelise.jpg') }}"
+                <div class="text-center hidden md:flex justify-center items-center">
+                    <img class="mx-auto rounded w-full" src="{{ asset('images/Supreme-de-volaille-caramelise.jpg') }}"
                         alt="Supreme-de-volaille-caramelise">
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-28">
-                <div class="text-center">
-                    <img class="mx-auto rounded" src="{{ asset('images/Creme-brulee.jpg') }}" alt="Creme-brulee">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-10">
+                <div class="text-center flex justify-center items-center">
+                    <img class="mx-auto rounded w-full" src="{{ asset('images/Creme-brulee.jpg') }}" alt="Creme-brulee">
                 </div>
 
                 <div class="text-white md:py-20">
                     <div class="my-3">
-                        <h3 class="text-center text-4xl font-extrabold">
+                        <h3 class="text-center text-2xl font-semibold text-white fw-serif">
                             DESSERTS MAISON 75 DHS
                         </h3>
                     </div>
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Pavlova aux fruits de saison
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Crémé brûlée
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Délice de mangue glacé
                             </p>
 
@@ -167,23 +165,24 @@
                 <h1 class="text-center  italic fw-dancing text-2xl">
                     Goûtez la différence
                 </h1>
-                <h2 class="text-center text-5xl my-6 font-extrabold text-orange-300">MENU 375 DHS</h2>
+                <h2 class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">MENU 375 DHS</h2>
                 <img class="mx-auto mb-6" src="{{ asset('images/line2.png') }}" alt="line">
-                <h4 class="text-center font-extrabold text-2xl">
+                <h4 class="text-center font-medium text-xl">
                     (Entrée, plat, dessert)
                 </h4>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-28">
-                <div class="text-center">
-                    <img class="mx-auto rounded" src="{{ asset('images/Tartare-de-saumon.jpg') }}" alt="Tartare-de-saumon">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-10">
+                <div class="text-center flex justify-center items-center">
+                    <img class="mx-auto rounded w-full" src="{{ asset('images/Tartare-de-saumon.jpg') }}"
+                        alt="Tartare-de-saumon">
                 </div>
                 <div class="text-white md:py-10">
                     <div class="my-3">
-                        <h3 class="text-center text-4xl font-extrabold">ENTRÉES 140 DHS</h3>
+                        <h3 class="text-center text-2xl font-semibold text-white fw-serif">ENTRÉES 140 DHS</h3>
                     </div>
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Tartare d'été aux tomates caramélisées
                             </p>
                             <p class="text-white text-lg">
@@ -192,7 +191,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Burrate
                             </p>
                             <p class="text-white text-lg">
@@ -201,7 +200,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Tartare de saumon
                             </p>
                             <p class="text-white text-lg">
@@ -212,20 +211,21 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-28">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-10">
                 <div class="text-center md:hidden">
-                    <img class="mx-auto rounded" src="{{ asset('images/filet-de-boeuf-1.jpg') }}" alt="filet-de-boeuf-1">
+                    <img class="mx-auto rounded w-full" src="{{ asset('images/filet-de-boeuf-1.jpg') }}"
+                        alt="filet-de-boeuf-1">
 
                 </div>
                 <div class="text-white">
                     <div class="my-3">
-                        <h3 class="text-center text-4xl font-extrabold">
+                        <h3 class="text-center text-2xl font-semibold text-white fw-serif">
                             PLAT 180 DHS
                         </h3>
                     </div>
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 émincé de bœuf
                             </p>
                             <p class="text-white text-lg">
@@ -234,7 +234,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Souris d'agneau confite
                             </p>
                             <p class="text-white text-lg">
@@ -243,7 +243,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Pavé de saumon rôti
                             </p>
                             <p class="text-white text-lg">
@@ -252,47 +252,49 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center hidden md:block">
-                    <img class="mx-auto rounded" src="{{ asset('images/filet-de-boeuf-1.jpg') }}" alt="filet-de-boeuf-1">
+                <div class="text-center hidden md:flex justify-center items-center">
+                    <img class="mx-auto rounded w-full" src="{{ asset('images/filet-de-boeuf-1.jpg') }}"
+                        alt="filet-de-boeuf-1">
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-28">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-10">
                 <div class="text-center">
-                    <img class="mx-auto rounded h-full" src="{{ asset('images/Moelleux-chocolat-glace-vanille.jpg') }}"
+                    <img class="mx-auto rounded h-full w-full flex justify-center items-center"
+                        src="{{ asset('images/Moelleux-chocolat-glace-vanille.jpg') }}"
                         alt="Moelleux-chocolat-glace-vanille">
                 </div>
 
                 <div class="text-white">
                     <div class="my-3">
-                        <h3 class="text-center text-4xl font-extrabold">
+                        <h3 class="text-center text-2xl font-semibold text-white fw-serif">
                             DESSERTS MAISON 90 DHS
                         </h3>
                     </div>
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Tarte citron meringuée (revisitée)
                             </p>
 
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Sphère chocolat, glace vanille
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Crumble de fruits secs
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 caramel chaud
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Notre Macaron aux framboises
                             </p>
                             <p class="text-white text-lg">
@@ -300,7 +302,7 @@
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Moelleux chocolat
                             </p>
                             <p class="text-white text-lg">
@@ -313,7 +315,7 @@
             </div>
 
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-28">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-10">
                 <div class="text-center md:hidden">
 
                     <img class="mx-auto rounded" src="{{ asset('images/istockphoto-1073666236-612x612-1.jpg') }}"
@@ -322,7 +324,7 @@
                 <div class="text-white flex justify-start items-center">
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Filet de bœuf ........... 210 DH
                             </p>
                             <p class="text-white text-lg">
@@ -331,7 +333,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Langouste de l'atlantique
                                 260 DH
                             </p>
@@ -344,27 +346,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center hidden md:block">
+                <div class="text-center hidden md:flex justify-center items-center">
                     <img class="mx-auto rounded" src="{{ asset('images/istockphoto-1073666236-612x612-1.jpg') }}"
                         alt="istockphoto-1073666236-612x612-1">
                 </div>
             </div>
 
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-28">
-                <div class="text-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-10">
+                <div class="text-center flex justify-center items-center">
                     <img class="mx-auto rounded h-full" src="{{ asset('images/Calque-92.png') }}" alt="Calque-92">
                 </div>
 
                 <div class="text-white">
                     <div class="my-3">
-                        <h3 class="text-center text-4xl font-extrabold">
+                        <h3 class="text-center text-2xl font-semibold text-white fw-serif">
                             JAPONAIS (8 pcs) 110 Dhs
                         </h3>
                     </div>
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
 
                                 Incredible Roll
 
@@ -374,7 +376,7 @@
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Crunchy Crevettes
                             </p>
                             <p class="text-white text-lg">
@@ -382,7 +384,7 @@
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
 
                                 Volcano
 
@@ -392,7 +394,7 @@
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
 
                                 Special California Roll
 
@@ -402,7 +404,7 @@
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
 
                                 Bomba Ball
 
@@ -424,25 +426,25 @@
                     COMPOSEZ VOTRE ASSIETTE​
                 </h4>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:my-20 my-28">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:my-20 my-10">
                 <div class="text-white md:py-10">
 
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 California saumon cuit (3 pcs)
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Maki avocat (3 pcs)
                             </p>
 
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
 
                                 Maki saumon ( 6 pcs )
 
@@ -453,7 +455,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center">
+                <div class="text-center flex justify-center items-center">
                     <img class="mx-auto rounded"
                         src="{{ asset('images/lots-of-various-types-of-sushi-rolls-topped-with-sesame-seeds-close-up-view-610x610.jpg') }}"
                         alt="lots-of-various-types-of-sushi-rolls-topped-with-sesame-seeds-close-up-view-610x610">
@@ -462,19 +464,19 @@
 
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Sushi saumon (3 pcs)
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Sushi eby crevette (3 pcs)
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 California saumon épicé (3 pcs)
                             </p>
 
@@ -485,30 +487,30 @@
             <div class="">
                 <div class="text-white ">
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:my-10 my-28">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:my-10 my-10">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
-                                Sakai Blokk (12 pcs) ............................................
+                            <p class="uppercase text-orange-300 md:text-start text-lg md:text-xl">
+                                Sakai Blokk (12 pcs) ......................
                                 125 DH
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
-                                Tokyo Blokk (18 pcs) ...............................................
+                            <p class="uppercase text-orange-300 md:text-end text-lg md:text-xl">
+                                Tokyo Blokk (18 pcs) ...................
                                 185 DH
                             </p>
 
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
-                                Osaka Blokk (15 pcs) ..........................................
+                            <p class="uppercase text-orange-300 md:text-start text-lg md:text-xl">
+                                Osaka Blokk (15 pcs) .......................
                                 155 DH
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
-                                Miyoshi Blokk (24 pcs) ..........................................
+                            <p class="uppercase text-orange-300 md:text-end text-lg md:text-xl">
+                                Miyoshi Blokk (24 pcs) ..................
                                 240 DH
                             </p>
                         </div>
@@ -521,12 +523,13 @@
                 <h1 class="text-center  italic fw-dancing text-2xl">
                     Goûtez la différence
                 </h1>
-                <h2 class="text-center text-5xl my-6 font-extrabold text-orange-300">MENU Enfant 160 DHS</h2>
+                <h2 class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans uppercase">MENU Enfant 160 DHS
+                </h2>
                 <img class="mx-auto mb-6" src="{{ asset('images/line2.png') }}" alt="line">
 
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-28">
-                <div class="text-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-10">
+                <div class="text-center flex justify-center items-center">
                     <img class="mx-auto rounded" src="{{ asset('images/Emince-de-poulet.jpg') }}"
                         alt="Emince-de-poulet">
                 </div>
@@ -534,7 +537,7 @@
 
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Émincé de poulet
                             </p>
                             <p class="text-white text-lg">
@@ -543,7 +546,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Pennes au saumon
                             </p>
                             <p class="text-white text-lg">
@@ -554,26 +557,25 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-28">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-10">
                 <div class="text-center md:hidden">
-                    <img class="mx-auto rounded"
+                    <img class="mx-auto rounded "
                         src="{{ asset('images/Chocolate-Ice-Cream-HD-Desktop-Wallpaper-46571-1024x640.jpg') }}"
                         alt="Chocolate-Ice-Cream-HD-Desktop-Wallpaper-46571-1024x640">
 
                 </div>
                 <div class="text-white flex justify-start items-center">
 
-                    <div class="space-y-5">
+                    <div class="space-y-5 md:w-full">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
-
+                            <p class="uppercase md:w-full text-center text-orange-300 text-lg md:text-xl">
                                 Glaces ou Sorbets
                             </p>
 
                         </div>
                     </div>
                 </div>
-                <div class="text-center hidden md:block">
+                <div class="text-center hidden md:flex justify-center items-center">
                     <img class="mx-auto rounded"
                         src="{{ asset('images/Chocolate-Ice-Cream-HD-Desktop-Wallpaper-46571-1024x640.jpg') }}"
                         alt="Chocolate-Ice-Cream-HD-Desktop-Wallpaper-46571-1024x640">

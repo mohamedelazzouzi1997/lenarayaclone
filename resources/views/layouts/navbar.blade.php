@@ -1,6 +1,7 @@
         <nav id="navbar-header" class="navbar border-b border-orange-300 bg-dark navbar-expand-lg z-50">
             <div class="container">
-                <a class="navbar-brand navbar-brand-center d-flex align-items-center p-0 only-mobile" href="/">
+                <a class="navbar-brand navbar-brand-center d-flex align-items-center p-0 only-mobile"
+                    href="{{ route('home.index') }}">
                     <img class="h-[60px]" src="{{ asset('images/logo.png') }}" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -40,7 +41,7 @@
                     </ul>
 
                     <a class="navbar-brand  navbar-brand-center d-flex align-items-center only-desktop mt-16 bg-black md:rounded-b-full"
-                        href="#">
+                        href="{{ route('home.index') }}">
                         <img class=" md:h-[160px]" src="{{ asset('images/logo.png') }}" alt="logo">
                     </a>
                     <ul class="navbar-nav d-flex justify-content-between">

@@ -59,4 +59,4 @@ Route::get('/{origin?}', function ($origin = 'direct') {
     }
 
     return view('clients.home',compact('origin'));
-});
+})->name('home.index');

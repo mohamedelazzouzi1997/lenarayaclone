@@ -23,7 +23,7 @@
             <div data-aos="fade-down" class=" text-white z-10 my-5">
                 <h1 class="text-2xl font-mono md:text-7xl uppercase text-center font-extrabold">un restaurant à expérience
                     UNIque </h1>
-                <p class="text-lg md:text-3xl font-extrabold text-center"> l’ambiance feutrée de nos spectacles </p>
+                <p class="text-lg md:text-3xl font-extrabold text-center mt-10"> l’ambiance feutrée de nos spectacles </p>
             </div>
         </div>
         <div class="px-6 md:px-40 my-16 text-white">
@@ -31,25 +31,25 @@
                 <h1 class="text-center  italic fw-dancing text-2xl">
                     Goûtez la différence
                 </h1>
-                <h2 class="text-center text-5xl my-6 font-extrabold text-orange-300">MENU JAPONAIS</h2>
+                <h2 class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">MENU JAPONAIS</h2>
                 <img class="mx-auto" src="{{ asset('images/line2.png') }}" alt="line">
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-20 my-28">
                 <div class="text-center flex justify-center items-center">
-                    <img class="mx-auto rounded"
+                    <img class="mx-auto rounded w-full h-full"
                         src="{{ asset('images/sushi-sushi-roll-set-black-stone-table-top-view-700x466.png') }}"
                         alt="sushi-sushi-roll-set-black-stone-table-top-view-700x466">
                 </div>
                 <div class="text-white">
                     <div class="my-3">
-                        <h3 class="text-center text-4xl font-extrabold">
+                        <h3 class="text-center text-2xl font-semibold text-white fw-serif">
                             JAPONAIS 110 DHS (8 pièces)
                         </h3>
 
                     </div>
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
 
                                 Incredible Roll
 
@@ -60,7 +60,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
 
                                 Crunchy Crevettes
 
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Volcano
                             </p>
                             <p class="text-white text-lg">
@@ -79,7 +79,7 @@
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Special California Roll
                             </p>
                             <p class="text-white text-lg">
@@ -87,7 +87,7 @@
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 BOMBA BALL
                             </p>
                             <p class="text-white text-lg">
@@ -100,29 +100,29 @@
         </div>
         <div class="px-6 md:px-40 my-16 text-white">
             <div class="mx-auto text-center">
-                <h4 class="text-center font-extrabold font-mono text-3xl">
+                <h4 class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">
                     COMPOSEZ VOTRE ASSIETTE​
                 </h4>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:my-20 my-28">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:my-5 my-28">
                 <div class="text-white md:py-10">
 
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 California saumon cuit (3 pcs)
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Maki avocat (3 pcs)
                             </p>
 
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
 
                                 Maki saumon ( 6 pcs )
 
@@ -140,19 +140,19 @@
 
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Sushi saumon (3 pcs)
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 Sushi eby crevette (3 pcs)
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
                                 California saumon épicé (3 pcs)
                             </p>
 
@@ -165,29 +165,32 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:my-10 my-28">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
-                                Sakai Blokk (12 pcs) ............................................
-                                125 DH
+                            <p class="uppercase md:text-end text-orange-300 text-lg md:text-xl">
+                                Sakai Blokk (12 pcs)
+                                <span class="text-white font-mono mx-4">125 DH</span>
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
-                                Tokyo Blokk (18 pcs) ...............................................
-                                185 DH
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                                Tokyo Blokk (18 pcs)
+                                <span class="text-white font-mono mx-4">185 DH</span>
+
                             </p>
 
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
-                                Osaka Blokk (15 pcs) ..........................................
-                                155 DH
+                            <p class="uppercase md:text-end text-orange-300 text-lg md:text-xl">
+                                Osaka Blokk (15 pcs)
+                                <span class="text-white font-mono mx-4">155 DH</span>
+
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-2xl">
-                                Miyoshi Blokk (24 pcs) ..........................................
-                                240 DH
+                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                                Miyoshi Blokk (24 pcs)
+                                <span class="text-white font-mono mx-4">240 DH</span>
+
                             </p>
                         </div>
                     </div>

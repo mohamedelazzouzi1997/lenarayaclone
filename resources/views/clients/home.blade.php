@@ -28,7 +28,7 @@
                     @csrf
                     <input type="hidden" name="origin" value="{{ $origin }}">
 
-                    <h2 class="text-orange-300 font-extrabold text-5xl text-center italic fw-josef fw">RESERVATION</h2>
+                    <h2 class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">RESERVATION</h2>
                     @if (Session::has('success'))
                         <div class="text-green-500 text-center bg-black px-3 py-2">
                             <i class="fa-regular fa-circle-check"></i> {{ Session::get('success') }}
@@ -53,7 +53,7 @@
                         <select name="number_of_persons"
                             class="px-3 py-2 bg-black border-2 border-orange-300  @error('number_of_persons') border-red-500 @enderror"
                             id="">
-                            <option selected disabled>Nombre De personnage</option>
+
                             @for ($i = 1; $i <= 20; $i++)
                                 <option value="{{ $i }}">{{ $i }} Personne</option>
                             @endfor
@@ -82,7 +82,7 @@
                     <h2 data-aos="fade-down" class="text-white text-center italic fw-dancing text-2xl">Taste the
                         difference
                     </h2>
-                    <h3 data-aos="fade-down" class="text-orange-300 font-semibold text-xl text-center fw-explora">
+                    <h3 data-aos="fade-down" class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">
                         RESERVATION</h3>
                     <img class="mx-auto mb-5 w-[50%] " src="{{ asset('images/line2.png') }}" alt="">
                 </div>
@@ -93,7 +93,7 @@
                         <div class="hidden md:block">
                             <h2 data-aos="fade-up" class="text-white text-center italic fw-dancing text-2xl">Taste the
                                 difference</h2>
-                            <h3 data-aos="fade-up" class="text-orange-300 font-semibold text-5xl text-center fw-explora">
+                            <h3 data-aos="fade-up" class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">
                                 RESERVATION</h3>
                             <img class="mx-auto mb-5 w-[50%] " src="{{ asset('images/line2.png') }}" alt="">
                         </div>
@@ -114,7 +114,8 @@
                         <div class="">
                             <h2 data-aos="fade-up" class="text-white text-center italic fw-dancing text-2xl">Composez
                                 votre assiette</h2>
-                            <h3 data-aos="fade-up" class="text-orange-300 font-semibold text-5xl text-center fw-explora">
+                            <h3 data-aos="fade-up"
+                                class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">
                                 FOOD</h3>
                             <img class="mx-auto mb-5 w-[50%]" src="{{ asset('images/line2.png') }}" alt="">
                         </div>
@@ -137,7 +138,7 @@
                 <div class="md:hidden">
                     <h2 data-aos="fade-down" class="text-white text-center italic fw-dancing text-2xl">Let the Music
                         Speak!</h2>
-                    <h3 data-aos="fade-down" class="text-orange-300 font-semibold text-5xl text-center fw-explora">
+                    <h3 data-aos="fade-down" class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">
                         SPECTACLE</h3>
                     <img class="mx-auto mb-5 w-[50%]" src="{{ asset('images/line2.png') }}" alt="">
                 </div>
@@ -150,7 +151,8 @@
                             <h2 data-aos="fade-up" class="text-white text-center italic fw-dancing text-2xl">Let the
                                 Music
                                 Speak!</h2>
-                            <h3 data-aos="fade-up" class="text-orange-300 font-semibold text-5xl text-center fw-explora">
+                            <h3 data-aos="fade-up"
+                                class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">
                                 SPECTACLE</h3>
                             <img class="mx-auto mb-5 w-[50%]" src="{{ asset('images/line2.png') }}" alt="">
                         </div>

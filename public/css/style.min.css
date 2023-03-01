@@ -21,7 +21,8 @@ body {
     background-color: #f4ede5;
 }
 
-.h1,
+
+/* .h1,
 .h2,
 .h3,
 .h4,
@@ -34,12 +35,13 @@ h4,
 h5,
 h6 {
     font-family: 'Josefin Sans', sans-serif;
-}
+} */
 
-h1,
+
+/* h1,
 h2 {
     font-weight: 700;
-}
+} */
 
 .subheading {
     color: #f34949;
@@ -554,4 +556,13 @@ a:hover {
 
 .bg-white {
     background-color: #222 !important;
+}
+
+@font-face {
+    font-family: caviar;
+    src: url('./../font/CaviarDreams_Bold.ttf');
+}
+
+.fw-caviar {
+    font-family: caviar !important;
 }
