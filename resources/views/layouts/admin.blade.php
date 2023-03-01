@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/adminstyle.min.css') }}">
     @vite('resources/css/app.css')
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
     @yield('styles')
 </head>
 

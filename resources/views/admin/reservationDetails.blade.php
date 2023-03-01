@@ -17,7 +17,7 @@
                                 bg-teal-300
                                 @else
                                     bg-yellow-200 @endif overflow-hidden shadow-xl sm:rounded-lg p-6 font-sans">
-            <div class="text-gray-50">
+            <div class="text-slate-800 text-xl">
                 <span>
                     {{ $res->created_at->format('F d, Y') . ' ' . $res->time }}
                 </span>

@@ -16,16 +16,22 @@
     <script src="https://kit.fontawesome.com/f4eca1ee68.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
     @vite('resources/css/app.css')
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
     <link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
     @yield('styles')
 </head>
 
 <body class="bg-black">
+
     @include('layouts.navbar')
+
     @yield('content')
+
     <button id="toTop" class="fixed z-30 rounded-md bottom-5 right-5 px-3 py-2 bg-orange-300 text-white"><i
             class="fa-solid fa-chevron-up"></i></button>
+
     @include('layouts.footer')
+
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="{{ asset('bootstrap/bootstrap.min.js') }}"></script>
