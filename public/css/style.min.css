@@ -3,15 +3,35 @@
  *	URL: https://gettemplates.co
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap'); */
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Explora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300&display=swap');
 html {
     overflow-x: hidden;
 }
 
 * {
     transition: all .5s ease-out;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white !important;
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white !important;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: white !important;
 }
 
 body {
@@ -565,4 +585,8 @@ a:hover {
 
 .fw-caviar {
     font-family: caviar !important;
+}
+
+.text-orange-300 {
+    color: #BB9656 !important
 }

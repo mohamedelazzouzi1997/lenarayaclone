@@ -23,12 +23,13 @@
 
         </div>
         <div class=" text-white z-10 mb-10 md:mt-20 mt-28">
-            <div class="px-3 py-3 opacity-90 bg-black">
+            <div class="px-3 py-3 opacity-80 bg-black">
                 <form action="{{ route('reservation.store') }}" method="post" class="z-20">
                     @csrf
                     <input type="hidden" name="origin" value="{{ $origin }}">
 
-                    <h2 class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">RESERVATION</h2>
+                    <h2 class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans tracking-widest">RESERVATION
+                    </h2>
                     @if (Session::has('success'))
                         <div class="text-green-500 text-center bg-black px-3 py-2">
                             <i class="fa-regular fa-circle-check"></i> {{ Session::get('success') }}
@@ -75,7 +76,7 @@
             </div>
         </div>
     </div>
-    <div class="px-5 md:px-20 my-16">
+    <div class="px-6 md:px-40 my-16">
         <div class="grid grid-cols-1 md:grid-cols- gap-y-10 gap-x-4">
             <div class="text-center">
                 <div class="md:hidden">
@@ -86,18 +87,20 @@
                         RESERVATION</h3>
                     <img class="mx-auto mb-5 w-[50%] " src="{{ asset('images/line2.png') }}" alt="">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 items-center">
-                    <img data-aos="fade-right" class="h-full rounded-lg" src="{{ asset('images/image2.jpg') }}"
+                <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-x-4">
+                    <img data-aos="fade-right" class="h-full w-full rounded-lg" src="{{ asset('images/image2.jpg') }}"
                         class="" alt="image2">
                     <div data-aos="fade-left" class="text-center">
                         <div class="hidden md:block">
                             <h2 data-aos="fade-up" class="text-white text-center italic fw-dancing text-2xl">Taste the
                                 difference</h2>
-                            <h3 data-aos="fade-up" class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">
+                            <h3 data-aos="fade-up"
+                                class="text-center tracking-widest text-4xl my-6 font-semibold text-orange-300 fw-sans">
                                 RESERVATION</h3>
                             <img class="mx-auto mb-5 w-[50%] " src="{{ asset('images/line2.png') }}" alt="">
                         </div>
-                        <div data-aos="fade-down" class="text-2xl my-5 fw-josef text-white text-center font-extrabold">
+                        <div data-aos="fade-down"
+                            class="text-2xl leading-10 my-5 fw-josef text-white text-center font-extrabold">
                             LE BLOKK, un restaurant LIVE MUSIQUE à expérience unique où se côtoient les plaisirs de la
                             table
                             et l’ambiance feutrée de nos spectacles : d’où notre appellation de restaurant spectacle à
@@ -115,13 +118,14 @@
                             <h2 data-aos="fade-up" class="text-white text-center italic fw-dancing text-2xl">Composez
                                 votre assiette</h2>
                             <h3 data-aos="fade-up"
-                                class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">
+                                class="text-center tracking-widest text-4xl my-6 font-semibold text-orange-300 fw-sans">
                                 FOOD</h3>
                             <img class="mx-auto mb-5 w-[50%]" src="{{ asset('images/line2.png') }}" alt="">
                         </div>
                         <img data-aos="fade-right" class="h-full rounded-lg mx-auto md:hidden"
                             src="{{ asset('images/image3.jpg') }}" alt="image2">
-                        <div data-aos="fade-down" class="text-2xl fw-josef my-5 text-white text-center font-extrabold">
+                        <div data-aos="fade-down"
+                            class="text-2xl leading-10 fw-josef my-5 text-white text-center font-extrabold">
                             Riche en histoire musicale et artistique, LE BLOKK propose une cuisine pleine de fraîcheur
                             et un
                             décor cosy. Rien de mieux pour déguster nos plats préparer avec soin et délicatesse par
@@ -129,7 +133,7 @@
                             talentueuse chef.
                         </div>
                     </div>
-                    <img data-aos="fade-right" class="h-full mx-auto rounded-lg hidden md:block"
+                    <img data-aos="fade-right" class="h-full w-full mx-auto rounded-lg hidden md:block"
                         src="{{ asset('images/image3.jpg') }}" alt="image2">
                 </div>
             </div>
@@ -138,13 +142,14 @@
                 <div class="md:hidden">
                     <h2 data-aos="fade-down" class="text-white text-center italic fw-dancing text-2xl">Let the Music
                         Speak!</h2>
-                    <h3 data-aos="fade-down" class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">
+                    <h3 data-aos="fade-down"
+                        class="text-center tracking-widest text-4xl my-6 font-semibold text-orange-300 fw-sans">
                         SPECTACLE</h3>
                     <img class="mx-auto mb-5 w-[50%]" src="{{ asset('images/line2.png') }}" alt="">
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 items-center">
-                    <img data-aos="fade-right" class="h-full rounded-lg" src="{{ asset('images/image4.png') }}"
+                    <img data-aos="fade-right" class="h-full w-full rounded-lg" src="{{ asset('images/image4.png') }}"
                         class="" alt="image2">
                     <div data-aos="fade-left" class="text-center">
                         <div class="hidden md:block">
@@ -152,11 +157,12 @@
                                 Music
                                 Speak!</h2>
                             <h3 data-aos="fade-up"
-                                class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">
+                                class="text-center tracking-widest text-4xl my-6 font-semibold text-orange-300 fw-sans">
                                 SPECTACLE</h3>
                             <img class="mx-auto mb-5 w-[50%]" src="{{ asset('images/line2.png') }}" alt="">
                         </div>
-                        <div data-aos="fade-down" class="text-2xl fw-josef my-5 text-white text-center font-extrabold">
+                        <div data-aos="fade-down"
+                            class="text-2xl leading-10 fw-josef my-5 text-white text-center font-extrabold">
                             Riche en histoire musicale et artistique, LE BLOKK propose une cuisine pleine de fraîcheur
                             et un
                             décor cosy. Rien de mieux pour déguster nos plats préparer avec soin et délicatesse par
@@ -210,7 +216,7 @@
                 interval: 30,
                 minTime: '8pm',
                 maxTime: '11:30pm',
-                defaultTime: '8pm',
+                // defaultTime: '8pm',
                 startTime: '08:00pm',
                 dynamic: false,
                 dropdown: true,

@@ -49,7 +49,7 @@
                     </div>
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
 
                                 Incredible Roll
 
@@ -60,7 +60,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
 
                                 Crunchy Crevettes
 
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
                                 Volcano
                             </p>
                             <p class="text-white text-lg">
@@ -79,7 +79,7 @@
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
                                 Special California Roll
                             </p>
                             <p class="text-white text-lg">
@@ -87,7 +87,7 @@
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
                                 BOMBA BALL
                             </p>
                             <p class="text-white text-lg">
@@ -109,20 +109,20 @@
 
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
                                 California saumon cuit (3 pcs)
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
                                 Maki avocat (3 pcs)
                             </p>
 
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
 
                                 Maki saumon ( 6 pcs )
 
@@ -140,19 +140,19 @@
 
                     <div class="space-y-5">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
                                 Sushi saumon (3 pcs)
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
                                 Sushi eby crevette (3 pcs)
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
                                 California saumon épicé (3 pcs)
                             </p>
 
@@ -165,14 +165,14 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:my-10 my-28">
                         <div class="">
-                            <p class="uppercase md:text-end text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase md:text-end text-orange-300 text-lg md:text-2xl font-medium">
                                 Sakai Blokk (12 pcs)
                                 <span class="text-white font-mono mx-4">125 DH</span>
                             </p>
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
                                 Tokyo Blokk (18 pcs)
                                 <span class="text-white font-mono mx-4">185 DH</span>
 
@@ -180,14 +180,14 @@
 
                         </div>
                         <div class="">
-                            <p class="uppercase md:text-end text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase md:text-end text-orange-300 text-lg md:text-2xl font-medium">
                                 Osaka Blokk (15 pcs)
                                 <span class="text-white font-mono mx-4">155 DH</span>
 
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg md:text-xl">
+                            <p class="uppercase text-orange-300 text-lg md:text-2xl font-medium">
                                 Miyoshi Blokk (24 pcs)
                                 <span class="text-white font-mono mx-4">240 DH</span>
 
