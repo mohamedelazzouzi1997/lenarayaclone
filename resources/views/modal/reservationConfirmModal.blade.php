@@ -16,7 +16,7 @@
                             class="form-group">
                             @csrf
                             <textarea class="w-full form-control" name="emailMessage" placeholder="Email Message" id="" cols="30"
-                                rows="5"></textarea>
+                                rows="5">Votre demande de réservation a été confirmée. Nous nous réjouissons de vous accueillir prochainement.</textarea>
                         </form>
                     </div>
                     <div class="modal-footer">

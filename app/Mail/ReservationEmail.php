@@ -15,15 +15,17 @@ class ReservationEmail extends Mailable
 
     public $res;
     public $status;
+    public $emailMessage;
 
 
     /**
      * Create a new email_message instance.
      */
-    public function __construct($res,$status)
+    public function __construct($res,$status,$emailMessage)
     {
         $this->res = $res;
         $this->status = $status;
+        $this->emailMessage = $emailMessage;
     }
 
     /**

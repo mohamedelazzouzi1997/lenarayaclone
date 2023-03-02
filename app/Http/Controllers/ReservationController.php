@@ -84,7 +84,7 @@ class ReservationController extends Controller
     public function confirm(Request $request,$id){
 
         $res = Resevation::findOrfail($id);
-
+        $emailMessage = $request->emailMessage;
 
         $reservation_mail = $res->email;
 
@@ -94,7 +94,7 @@ class ReservationController extends Controller
         ]);
 
         if($res)
-            Mail::to($reservation_mail)->send(new ReservationEmail($res,'confirm'));
+            Mail::to($reservation_mail)->send(new ReservationEmail($res,'confirm',$emailMessage));
 
         session()->flash('success','Rservation a été Confirmé avec succée');
         return back();
@@ -132,7 +132,7 @@ class ReservationController extends Controller
     }
 
     public function update(Request $request,$id){
-        
+
         $request->validate([
             'name'=> 'required' ,
             'email'=> 'required' ,
