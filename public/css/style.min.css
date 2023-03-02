@@ -139,8 +139,8 @@ a:hover {
 }
 
 .navbar-brand-center {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 a:hover {
@@ -589,4 +589,12 @@ a:hover {
 
 .text-orange-300 {
     color: #BB9656 !important
+}
+
+.border-orange-300 {
+    border-color: #BB9656 !important;
+}
+
+.bg-orange-300 {
+    background-color: #BB9656 !important;
 }

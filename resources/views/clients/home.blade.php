@@ -16,7 +16,7 @@
     @php
         $img = 'image1.png';
     @endphp
-    <div id="reservation py-10"
+    <div id="reservation"
         class="px-5 bg-fixed flex justify-center items-center relative md:px-48 md:h-screen bg-containe bg-top"
         style="background-image: url('{{ asset('images/image1.png') }}')">
         <div class="absolute bottom-0 right-0 left-0 top-0 bg-black opacity-50">
@@ -76,7 +76,7 @@
             </div>
         </div>
     </div>
-    <div class="px-6 md:px-40 my-16">
+    <div class="px-6 md:px-24 my-16">
         <div class="grid grid-cols-1 md:grid-cols- gap-y-10 gap-x-4">
             <div class="text-center">
                 <div class="md:hidden">
@@ -100,7 +100,7 @@
                             <img class="mx-auto mb-5 w-[50%] " src="{{ asset('images/line2.png') }}" alt="">
                         </div>
                         <div data-aos="fade-down"
-                            class="text-2xl leading-10 my-5 fw-josef text-white text-center font-extrabold">
+                            class="text-xl leading-10 my-5 fw-josef text-white text-center font-semibold">
                             LE BLOKK, un restaurant LIVE MUSIQUE à expérience unique où se côtoient les plaisirs de la
                             table
                             et l’ambiance feutrée de nos spectacles : d’où notre appellation de restaurant spectacle à
@@ -111,7 +111,7 @@
             </div>
 
             <div class="text-center">
-                <div class="grid grid-cols-1 md:grid-cols-2 items-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 items-center">
 
                     <div data-aos="fade-left" class="text-center">
                         <div class="">
@@ -125,7 +125,7 @@
                         <img data-aos="fade-right" class="h-full rounded-lg mx-auto md:hidden"
                             src="{{ asset('images/image3.jpg') }}" alt="image2">
                         <div data-aos="fade-down"
-                            class="text-2xl leading-10 fw-josef my-5 text-white text-center font-extrabold">
+                            class="text-xl leading-10 fw-josef my-5 text-white text-center font-semibold">
                             Riche en histoire musicale et artistique, LE BLOKK propose une cuisine pleine de fraîcheur
                             et un
                             décor cosy. Rien de mieux pour déguster nos plats préparer avec soin et délicatesse par
@@ -148,7 +148,7 @@
                     <img class="mx-auto mb-5 w-[50%]" src="{{ asset('images/line2.png') }}" alt="">
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 items-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 items-center">
                     <img data-aos="fade-right" class="h-full w-full rounded-lg" src="{{ asset('images/image4.png') }}"
                         class="" alt="image2">
                     <div data-aos="fade-left" class="text-center">
@@ -162,7 +162,7 @@
                             <img class="mx-auto mb-5 w-[50%]" src="{{ asset('images/line2.png') }}" alt="">
                         </div>
                         <div data-aos="fade-down"
-                            class="text-2xl leading-10 fw-josef my-5 text-white text-center font-extrabold">
+                            class="text-xl leading-10 fw-josef my-5 text-white text-center font-semibold">
                             Riche en histoire musicale et artistique, LE BLOKK propose une cuisine pleine de fraîcheur
                             et un
                             décor cosy. Rien de mieux pour déguster nos plats préparer avec soin et délicatesse par
