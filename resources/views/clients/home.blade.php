@@ -85,7 +85,9 @@
                         difference
                     </h2>
                     <h3 data-aos="fade-down" class="text-center  text-4xl my-6 font-semibold text-orange-300 fw-sans">
-                        RESERVATION</h3>
+
+                        RESTAURANT
+                    </h3>
                     <img class="mx-auto mb-5 w-[50%] " src="{{ asset('images/line2.png') }}" alt="">
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-x-4">
@@ -97,7 +99,9 @@
                                 difference</h2>
                             <h3 data-aos="fade-up"
                                 class="text-center tracking-widest text-4xl my-6 font-semibold text-orange-300 fw-sans">
-                                RESERVATION</h3>
+
+                                RESTAURANT
+                            </h3>
                             <img class="mx-auto mb-5 w-[50%] " src="{{ asset('images/line2.png') }}" alt="">
                         </div>
                         <div data-aos="fade-down"

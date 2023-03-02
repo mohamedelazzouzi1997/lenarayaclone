@@ -12,7 +12,7 @@ class ReservationController extends Controller
 {
     //
     public function index(){
-        $reservations = Resevation::latest('id')->paginate(10);
+        $reservations = Resevation::latest('id')->get();
         // dd($reservations);
         return view('admin.dashboard',compact('reservations'));
     }
@@ -99,6 +99,7 @@ class ReservationController extends Controller
         session()->flash('success','Rservation a été Confirmé avec succée');
         return back();
     }
+
     public function delete(Request $request,$id){
         $res = Resevation::findOrfail($id);
 
@@ -114,4 +115,46 @@ class ReservationController extends Controller
         session()->flash('delete','Rservation a été supprimé avec succée');
         return to_route('dashboard');
     }
+
+    public function destroy(Request $request){
+        // dd($request->bookings);
+        $res = Resevation::whereIn('id',$request->bookings)->delete();
+
+        session()->flash('delete','Rservation a été supprimé avec succée');
+        return to_route('dashboard');
+    }
+
+
+    public function edit($id){
+        $res = Resevation::findOrfail($id);
+
+        return view('admin.reservationEdit',compact('res'));
+    }
+
+    public function update(Request $request,$id){
+        
+        $request->validate([
+            'name'=> 'required' ,
+            'email'=> 'required' ,
+            'phone'=> 'required' ,
+            'date'=> 'required' ,
+            'time'=> 'required' ,
+            'status'=> 'required' ,
+            'number_of_persons'=> 'required' ,
+        ]);
+        $res = Resevation::findOrfail($id);
+
+       $res->update([
+            'full_name'=> $request->name ,
+            'email'=> $request->email ,
+            'phone'=> $request->phone ,
+            'date'=> Carbon::parse($request->date)->format('Y-m-d') ,
+            'time'=> $request->time,
+            'status'=> $request->status,
+            'number_of_persons'=> $request->number_of_persons,
+        ]);
+        session()->flash('success','La reservation a été modifier.');
+        return back();
+    }
+
 }

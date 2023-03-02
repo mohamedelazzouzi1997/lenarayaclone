@@ -43,6 +43,9 @@ Route::middleware(['auth','is_admin'])->group(function () {
     Route::post('/reservation/{id}/delete', [ReservationController::class,'delete'])->name('reservation.delete');
     Route::post('/reservation/{id}/reject', [ReservationController::class,'reject'])->name('reservation.reject');
     Route::post('/reservation/{id}/confirm', [ReservationController::class,'confirm'])->name('reservation.confirm');
+    Route::delete('/reservation/multiple/delete', [ReservationController::class,'destroy'])->name('reservation.destroy');
+    Route::get('/reservation/{id}/edit', [ReservationController::class,'edit'])->name('reservation.edit');
+    Route::put('/reservation/{id}/update', [ReservationController::class,'update'])->name('reservation.update');
 });
 
 

@@ -101,7 +101,7 @@
                             Votre demande de réservation a été confirmée. Nous nous réjouissons de vous accueillir
                             prochainement.
                         </p>
-                        <p style="margin: 10px 0px; font-weight:bold">Votre réservation::</p>
+                        <p style="margin: 10px 0px; font-weight:bold">Votre réservation:</p>
                         <p>{{ $res->full_name }}</p>
                         <p>{{ $res->number_of_persons }} Personnes</p>
                         <p> {{ $res->date->format('F d, Y') . ' ' . $res->time }}</p>
