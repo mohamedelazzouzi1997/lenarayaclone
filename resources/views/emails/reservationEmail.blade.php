@@ -134,7 +134,7 @@
                             nos heures normales de travail,
                             il se peut que nous ne puissions pas la confirmer avant que nous soyons à nouveau
                             ouverts. --}}
-                            {{ $message }}
+                            {{ $emailMessage }}
                         </p>
                         <p style="margin: 10px 0px; font-weight:bold">Les détails de votre reservation:</p>
                         <p>{{ $res->full_name }}</p>
@@ -161,13 +161,15 @@
                     <td class="content" colspan="2">
                         <p>Merci <span style=" font-weight:bold"> {{ $res->full_name }},</span></p>
                         <p style="margin: 10px 0px">
-                            Donnez-nous quelques instants pour nous assurer que nous avons de la place pour vous.
+                            {{-- Donnez-nous quelques instants pour nous assurer que nous avons de la place pour vous.
                             Vous
                             recevrez bientôt un autre courriel de notre part. Si cette demande a été faite en dehors
                             de
                             nos heures normales de travail,
                             il se peut que nous ne puissions pas la confirmer avant que nous soyons à nouveau
-                            ouverts.
+                            ouverts. --}}
+                            {{ $emailMessage }}
+
                         </p>
                         <p style="margin: 10px 0px; font-weight:bold">Les détails de votre reservation:</p>
                         <p>{{ $res->full_name }}</p>
