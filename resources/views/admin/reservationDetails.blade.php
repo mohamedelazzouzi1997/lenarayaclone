@@ -19,7 +19,7 @@
                                     bg-yellow-200 @endif overflow-hidden shadow-xl sm:rounded-lg p-6 font-sans">
             <div class="text-slate-800 text-xl">
                 <span>
-                    {{ $res->created_at->format('F d, Y') . ' ' . $res->time }}
+                    {{ $res->date->format('F d, Y') . ' ' . $res->time }}
                 </span>
                 <span class="mx-6 block md:inline">
                     <button type="button" data-toggle="modal" data-target="#emailConfirmModal"
@@ -36,16 +36,17 @@
                     <div class="text-start md:col-span-3 text-gray-700"> #{{ $res->id }}</div>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 text-black border-b border-gray-700">
-                    <div class="font-extrabold text-start text-lg">Nombre de Personnage :</div>
+                    <div class="font-extrabold text-start text-lg">Nom Complet :</div>
+                    <div class="text-start md:col-span-3 text-gray-700"> {{ $res->full_name }}</div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 text-black border-b border-gray-700">
+                    <div class="font-extrabold text-start text-lg">Nombre de Personne :</div>
                     <div class="text-start md:col-span-3 text-gray-700"> {{ $res->number_of_persons }}</div>
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-4 text-black border-b border-gray-700">
                     <div class="font-extrabold text-start text-lg">Email :</div>
                     <div class="text-start md:col-span-3 text-gray-700"> {{ $res->email }}
-                        {{-- <a href="" class="text-blue-700">
-                            Send Email
-                        </a> --}}
                     </div>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 text-black border-b border-gray-700">

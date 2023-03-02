@@ -20,4 +20,5 @@ class Resevation extends Model
         'origin',
         'status'
     ];
+    protected $casts = [ 'date'=>'date'];
 }

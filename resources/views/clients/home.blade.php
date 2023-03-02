@@ -34,44 +34,45 @@
                         <div class="text-green-500 text-center bg-black px-3 py-2">
                             <i class="fa-regular fa-circle-check"></i> {{ Session::get('success') }}
                         </div>
-                    @endif
-                    <div class="grid grid-cols-1 md:grid-cols-2 p-2 text-center gap-4">
-                        <input name="name" value="{{ old('name') }}"
-                            class="px-3 py-3 border-2 border-orange-300 @error('name') border-red-500 @enderror bg-black "
-                            placeholder="Nom Complet" type="text">
-                        <input name="email" value="{{ old('email') }}"
-                            class="px-3 py-3 bg-black border-2 border-orange-300  @error('email') border-red-500 @enderror"
-                            placeholder="Email" type="email">
-                        <input name="phone" value="{{ old('phone') }}"
-                            class="px-3 py-3 bg-black border-2 border-orange-300  @error('phone') border-red-500 @enderror"
-                            placeholder="Telephone" type="text">
-                        <input name="date" value="{{ old('date') }}"
-                            class="px-3 py-3 bg-black border-2 border-orange-300  @error('date') border-red-500 @enderror"
-                            placeholder="Date" type="text" datepicker datepicker-autohide>
-                        <input name="time" value="{{ old('time') }}"
-                            class="px-3 py-3 bg-black border-2 border-orange-300  @error('time') border-red-500 @enderror"
-                            placeholder="Heure" type="text" id="timepicker">
-                        <select name="number_of_persons"
-                            class="px-3 py-2 bg-black border-2 border-orange-300  @error('number_of_persons') border-red-500 @enderror"
-                            id="">
+                    @else
+                        <div class="grid grid-cols-1 md:grid-cols-2 p-2 text-center gap-4">
+                            <input name="name" value="{{ old('name') }}"
+                                class="px-3 py-3 border-2 border-orange-300 @error('name') border-red-500 @enderror bg-black "
+                                placeholder="Nom Complet" type="text">
+                            <input name="email" value="{{ old('email') }}"
+                                class="px-3 py-3 bg-black border-2 border-orange-300  @error('email') border-red-500 @enderror"
+                                placeholder="Email" type="email">
+                            <input name="phone" value="{{ old('phone') }}"
+                                class="px-3 py-3 bg-black border-2 border-orange-300  @error('phone') border-red-500 @enderror"
+                                placeholder="Telephone" type="text">
+                            <input name="date" value="{{ old('date') }}"
+                                class="px-3 py-3 bg-black border-2 border-orange-300  @error('date') border-red-500 @enderror"
+                                placeholder="Date" type="text" datepicker datepicker-autohide>
+                            <input name="time" value="{{ old('time') }}"
+                                class="px-3 py-3 bg-black border-2 border-orange-300  @error('time') border-red-500 @enderror"
+                                placeholder="Heure" type="text" id="timepicker">
+                            <select name="number_of_persons"
+                                class="px-3 py-2 bg-black border-2 border-orange-300  @error('number_of_persons') border-red-500 @enderror"
+                                id="">
 
-                            @for ($i = 1; $i <= 20; $i++)
-                                <option value="{{ $i }}">{{ $i }} Personne</option>
-                            @endfor
-                        </select>
-                        <div class="text-orange-200">
-                            <div id="message" class="cursor-pointer text-orange-300">Ajoute un Message</div>
-                            <textarea placeholder="Votre Message" value="{{ old('message') }}" name="message"
-                                class="px-3 w-full py-3 bg-black border-2 border-orange-300 hidden"></textarea>
+                                @for ($i = 1; $i <= 20; $i++)
+                                    <option value="{{ $i }}">{{ $i }} Personne</option>
+                                @endfor
+                            </select>
+                            <div class="text-orange-200">
+                                <div id="message" class="cursor-pointer text-orange-300">Ajoute un Message</div>
+                                <textarea placeholder="Votre Message" value="{{ old('message') }}" name="message"
+                                    class="px-3 w-full py-3 bg-black border-2 border-orange-300 hidden"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="text-center p-10 text-2xl fw-josef">
-                        Toute réservation en ligne sera confirmée par mail dans les plus brefs délais.
-                    </div>
-                    <div class="text-center">
-                        <button type="submit"
-                            class="px-5 rounded py-2 bg-orange-400 font-semibold hover:bg-orange-200 text-black">RESERVER</button>
-                    </div>
+                        <div class="text-center p-10 text-2xl fw-josef">
+                            Toute réservation en ligne sera confirmée par mail dans les plus brefs délais.
+                        </div>
+                        <div class="text-center">
+                            <button type="submit"
+                                class="px-5 rounded py-2 bg-orange-400 font-semibold hover:bg-orange-200 text-black">RESERVER</button>
+                        </div>
+                    @endif
                 </form>
             </div>
         </div>

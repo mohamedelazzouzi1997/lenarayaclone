@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('full_name');
             $table->string('email');
             $table->string('phone');
-            $table->string('date');
+            $table->date('date');
             $table->string('time');
             $table->string('number_of_persons');
             $table->text('message')->nullable();

@@ -13,16 +13,17 @@ class ReservationEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $email_message;
+    public $res;
+    public $status;
 
-    public $username;
+
     /**
      * Create a new email_message instance.
      */
-    public function __construct($email_message,$username)
+    public function __construct($res,$status)
     {
-        $this->email_message = $email_message;
-        $this->username = $username;
+        $this->res = $res;
+        $this->status = $status;
     }
 
     /**

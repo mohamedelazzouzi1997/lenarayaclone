@@ -47,7 +47,7 @@
                                     <td>{{ $res->full_name }}</td>
                                     <td>{{ $res->email }}</td>
                                     <td>{{ $res->phone }}</td>
-                                    <td>{{ $res->date }}</td>
+                                    <td>{{ $res->date->format('d-m-Y') }}</td>
                                     <td>{{ $res->time }}</td>
                                     <td>{{ $res->number_of_persons }}</td>
                                     <td>{{ $res->message }}</td>

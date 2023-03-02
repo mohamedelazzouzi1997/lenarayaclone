@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Resevation;
 use Illuminate\Http\Request;
 use App\Mail\ReservationEmail;
@@ -31,6 +32,8 @@ class ReservationController extends Controller
             'time'=> 'required' ,
             'number_of_persons'=> 'required' ,
         ]);
+
+        // dd(Carbon::parse($request->date)->format('Y-m-d'));
         $origin_array = [
             'tk' => 'tiktok',
             'in' => 'instagrame',
@@ -50,15 +53,14 @@ class ReservationController extends Controller
             'full_name'=> $request->name ,
             'email'=> $request->email ,
             'phone'=> $request->phone ,
-            'date'=> $request->date ,
+            'date'=> Carbon::parse($request->date)->format('Y-m-d') ,
             'time'=> $request->time ,
             'number_of_persons'=> $request->number_of_persons ,
             'message'=> $request->message ,
             'origin'=> $origin_to_store,
         ]);
-        if($res)
-        \session()->flash('success','vote reservation a été vien enregistré');
-
+        \session()->flash('success','Merci votre demande de réservation est en attente de confirmation. Les mises à jour seront envoyées à l\'adresse e-mail que vous avez fournie.');
+            Mail::to($request->email)->send(new ReservationEmail($res,'reserve'));
         return back();
     }
 
@@ -67,16 +69,13 @@ class ReservationController extends Controller
         $res = Resevation::findOrfail($id);
 
         $reservation_mail = $res->email;
-        $username = $res->full_name;
-        $email_message = $request->emailMessage;
-
 
         $res->update([
             'status' => 'declined'
         ]);
 
         if($res)
-            Mail::to($reservation_mail)->send(new ReservationEmail($email_message,$username));
+            Mail::to($reservation_mail)->send(new ReservationEmail($res,'reject'));
 
         session()->flash('warning','Rservation a été Rejecté avec succée');
         return back();
@@ -86,16 +85,16 @@ class ReservationController extends Controller
 
         $res = Resevation::findOrfail($id);
 
-        $username = $res->full_name;
+
         $reservation_mail = $res->email;
-        $email_message = $request->emailMessage;
+
 
         $res->update([
             'status' => 'confirmed'
         ]);
 
         if($res)
-            Mail::to($reservation_mail)->send(new ReservationEmail($email_message,$username));
+            Mail::to($reservation_mail)->send(new ReservationEmail($res,'confirm'));
 
         session()->flash('success','Rservation a été Confirmé avec succée');
         return back();
@@ -103,14 +102,14 @@ class ReservationController extends Controller
     public function delete(Request $request,$id){
         $res = Resevation::findOrfail($id);
 
-        $username = $res->full_name;
+
         $reservation_mail = $res->email;
-        $email_message = $request->emailMessage;
+
 
         $res->delete();
 
         if($res)
-            Mail::to($reservation_mail)->send(new ReservationEmail($email_message,$username));
+            Mail::to($reservation_mail)->send(new ReservationEmail($res,'reject'));
 
         session()->flash('delete','Rservation a été supprimé avec succée');
         return to_route('dashboard');

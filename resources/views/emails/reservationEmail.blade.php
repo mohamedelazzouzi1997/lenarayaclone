@@ -1,116 +1,187 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
-    xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+<html>
 
 <head>
-    <title> Welcome to Coded Mails </title>
-    <!--[if !mso]><!-- -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!--<![endif]-->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>Reservation Confirmation</title>
     <style type="text/css">
-        #outlook a {
-            padding: 0;
-        }
-
         body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333333;
             margin: 0;
             padding: 0;
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
         }
 
-        table,
-        td {
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
             border-collapse: collapse;
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
+            border-spacing: 0;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 4px;
         }
 
-        img {
-            border: 0;
-            height: auto;
-            line-height: 100%;
-            outline: none;
+        table td {
+            padding: 10px 25px;
+            border: none;
+            vertical-align: top;
+        }
+
+        table td.header {
+            background-color: rgb(73, 192, 73);
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: #f5f5f5;
+        }
+
+        table td.title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        table td.content {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        table td.content p {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        table td.button {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        table td.button a {
+            display: inline-block;
+            background-color: #0088cc;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
             text-decoration: none;
-            -ms-interpolation-mode: bicubic;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease-in-out;
         }
 
-        p {
-            display: block;
-            margin: 13px 0;
-        }
-    </style>
-
-    <style type="text/css">
-        @media only screen and (min-width:480px) {
-            .mj-column-per-100 {
-                width: 100% !important;
-                max-width: 100%;
-            }
-        }
-    </style>
-    <style type="text/css">
-        @media only screen and (max-width:480px) {
-            table.mj-full-width-mobile {
-                width: 100% !important;
-            }
-
-            td.mj-full-width-mobile {
-                width: auto !important;
-            }
-        }
-    </style>
-    <style type="text/css">
-        a,
-        span,
-        td,
-        th {
-            -webkit-font-smoothing: antialiased !important;
-            -moz-osx-font-smoothing: grayscale !important;
+        table td.button a:hover {
+            background-color: #006699;
         }
     </style>
 </head>
 
-<body style="background-color:#ffffff;">
-    <div style="background-color:#ffffff;">
-        <div style="margin:0px auto;max-width:600px;">
-            <table role="presentation" style="width:100%;" cellspacing="0" cellpadding="0" border="0"
-                align="center">
-                <tbody>
-                    <tr>
-                        <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
-                            <div class="mj-column-per-100 mj-outlook-group-fix"
-                                style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                                <table role="presentation" style="vertical-align:top;" width="100%" cellspacing="0"
-                                    cellpadding="0" border="0">
-                                    <tbody>
-                                        <tr>
-                                            <td style="font-size:0px;padding:10px 25px;word-break:break-word;"
-                                                align="left">
-                                                <div
-                                                    style="font-family:Helvetica, Arial, sans-serif;font-size:18px;font-weight:400;line-height:24px;text-align:left;color:#434245;">
-                                                    <p style="margin: 0;">Hi, {{ $username }}</p>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
+<body>
+    <div style="background-color: rgb(73, 192, 73); padding:50px 150px">
+        @if ($status == 'confirm')
+            <table>
+                <tr>
+                    <td class="header" colspan="2">LE BLOKK</td>
+                </tr>
+
+                <tr>
+                    <td class="title" colspan="2">Votre réservation à LE BLOKK est confirmée.</td>
+                </tr>
+                <tr>
+                    <td class="content" colspan="2">
+                        <p>Bonjour <span style=" font-weight:bold"> {{ $res->full_name }},</span></p>
+                        <p style="margin: 10px 0px">
+                            Votre demande de réservation a été confirmée. Nous nous réjouissons de vous accueillir
+                            prochainement.
+                        </p>
+                        <p style="margin: 10px 0px; font-weight:bold">Votre réservation::</p>
+                        <p>{{ $res->full_name }}</p>
+                        <p>{{ $res->number_of_persons }} Personnes</p>
+                        <p> {{ $res->date->format('F d, Y') . ' ' . $res->time }}</p>
+                        <p style="margin:20px 0px;font-style: italic;">ce message a été envoyé par <a
+                                style="color:rgb(29, 208, 253); font-weight:bold;text-decoration:none;font-style: italic;"
+                                href="https://leblokkmarrakech.com/">LE BLOKK</a> à
+                            {{ Carbon\Carbon::now()->addHour()->format('F d, Y g:i A') }}</p>
+                    </td>
+                </tr>
+
             </table>
-        </div>
-        <div>
-            <p style="padding: 5px 107px">
-                {{ $email_message }}
-            </p>
-        </div>
+        @elseif ($status == 'reject')
+            <table>
+                <tr>
+                    <td class="header" colspan="2">LE BLOKK</td>
+                </tr>
+
+                <tr>
+                    <td class="title" colspan="2">Votre réservation au BLOKK est en attente</td>
+                </tr>
+                <tr>
+                    <td class="content" colspan="2">
+                        <p>Merci <span style=" font-weight:bold"> {{ $res->full_name }},</span></p>
+                        <p style="margin: 10px 0px">
+                            Donnez-nous quelques instants pour nous assurer que nous avons de la place pour vous.
+                            Vous
+                            recevrez bientôt un autre courriel de notre part. Si cette demande a été faite en dehors
+                            de
+                            nos heures normales de travail,
+                            il se peut que nous ne puissions pas la confirmer avant que nous soyons à nouveau
+                            ouverts.
+                        </p>
+                        <p style="margin: 10px 0px; font-weight:bold">Les détails de votre reservation:</p>
+                        <p>{{ $res->full_name }}</p>
+                        <p>{{ $res->number_of_persons }} Personnes</p>
+                        <p> {{ $res->date->format('F d, Y') . ' ' . $res->time }}</p>
+                        <p style="margin:20px 0px;font-style: italic;">ce message a été envoyé par <a
+                                style="color:rgb(29, 208, 253); font-weight:bold;text-decoration:none;font-style: italic;"
+                                href="https://leblokkmarrakech.com/">LE BLOKK</a> à
+                            {{ Carbon\Carbon::now()->addHour()->format('F d, Y g:i A') }}</p>
+                    </td>
+                </tr>
+
+            </table>
+        @elseif ($status == 'reserve')
+            <table>
+                <tr>
+                    <td class="header" colspan="2">LE BLOKK</td>
+                </tr>
+
+                <tr>
+                    <td class="title" colspan="2">Votre réservation au BLOKK est en attente</td>
+                </tr>
+                <tr>
+                    <td class="content" colspan="2">
+                        <p>Merci <span style=" font-weight:bold"> {{ $res->full_name }},</span></p>
+                        <p style="margin: 10px 0px">
+                            Donnez-nous quelques instants pour nous assurer que nous avons de la place pour vous.
+                            Vous
+                            recevrez bientôt un autre courriel de notre part. Si cette demande a été faite en dehors
+                            de
+                            nos heures normales de travail,
+                            il se peut que nous ne puissions pas la confirmer avant que nous soyons à nouveau
+                            ouverts.
+                        </p>
+                        <p style="margin: 10px 0px; font-weight:bold">Les détails de votre reservation:</p>
+                        <p>{{ $res->full_name }}</p>
+                        <p>{{ $res->number_of_persons }} Personnes</p>
+                        <p> {{ $res->date->format('F d, Y') . ' ' . $res->time }}</p>
+                        <p style="margin:20px 0px;font-style: italic;">ce message a été envoyé par <a
+                                style="color:rgb(29, 208, 253); font-weight:bold;text-decoration:none;font-style: italic;"
+                                href="https://leblokkmarrakech.com/">LE BLOKK</a> à
+                            {{ Carbon\Carbon::now()->addHour()->format('F d, Y g:i A') }}</p>
+                    </td>
+                </tr>
+
+            </table>
+        @endif
+
     </div>
-
-
 </body>
 
 </html>
