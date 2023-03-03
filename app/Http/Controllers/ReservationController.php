@@ -167,10 +167,11 @@ class ReservationController extends Controller
     public function export(Request $request){
 
         if($request->date== 'upcoming' ){
+
             $date = 'upcoming';
             $reservations = Resevation::whereDate('date','>',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','time','message','status']);
         }elseif($request->date== 'range'){
-            $date = 'upcoming';
+            $date = 'range';
 
             $Filter_Date_From = $request->start ?? Carbon::now();
             $Filter_Date_To = $request->end ?? Carbon::now();
@@ -179,11 +180,13 @@ class ReservationController extends Controller
                                         ->whereDate('date', '<=', $Filter_Date_To)
                                         ->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','time','message','status']);
 
-        }else{
+        }elseif($request->date== 'today'){
             $date = 'today';
+            $reservations = Resevation::whereDate('date','>',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','time','message','status']);
 
-            $reservations = Resevation::whereDate('date',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','time','message','status']);
+            // $reservations = Resevation::whereDate('date',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','time','message','status']);
         }
+
         if($request->file_type == 'pdf'){
             $pdf = Pdf::loadView('pdf.reservation', [
                 'reservations'=> $reservations,
