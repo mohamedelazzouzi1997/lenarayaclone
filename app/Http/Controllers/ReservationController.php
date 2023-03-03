@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+// use Barryvdh\DomPDF\Facade as PDF;
+// use Barryvdh\DomPDF\PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Resevation;
 use Illuminate\Http\Request;
 use App\Mail\ReservationEmail;
+use App\Exports\ReservationExport;
 use Illuminate\Support\Facades\Mail;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ReservationController extends Controller
 {
@@ -162,18 +167,33 @@ class ReservationController extends Controller
     public function export(Request $request){
 
         if($request->date== 'upcoming' ){
-            $reservations = Resevation::whereDate('date','>',Carbon::today())->whereIn('status',$request->etat)->get();
+            $date = 'upcoming';
+            $reservations = Resevation::whereDate('date','>',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','time','message','status']);
         }elseif($request->date== 'range'){
+            $date = 'upcoming';
+
             $Filter_Date_From = $request->start ?? Carbon::now();
             $Filter_Date_To = $request->end ?? Carbon::now();
+
             $reservations = Resevation::whereDate('date', '>=', $Filter_Date_From)
                                         ->whereDate('date', '<=', $Filter_Date_To)
-                                        ->whereIn('status',$request->etat)->get();
-            
+                                        ->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','time','message','status']);
+
         }else{
-            $reservations = Resevation::whereDate('date',Carbon::today())->whereIn('status',$request->etat)->get();
-            
+            $date = 'today';
+
+            $reservations = Resevation::whereDate('date',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','time','message','status']);
         }
-        
+        if($request->file_type == 'pdf'){
+            $pdf = Pdf::loadView('pdf.reservation', [
+                'reservations'=> $reservations,
+                'date' => $date
+            ]);
+            return $pdf->download($date.'_Reservation.pdf');
+        }else{
+            return Excel::download(new ReservationExport($reservations), $date.'_Reservation.xlsx');
+
+        }
+
     }
 }

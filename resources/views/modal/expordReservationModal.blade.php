@@ -30,8 +30,8 @@
                     </div>
                     <div class="form-group">
                         <div class="space-x-2">
-                            <input class="rounded text-blue-900" type="checkbox" name="etat[]" value="pending"><label
-                                class="italic inline-block" for="">pending</label>
+                            <input checked class="rounded text-blue-900" type="checkbox" name="etat[]"
+                                value="pending"><label class="italic inline-block" for="">pending</label>
                         </div>
                         <div class="space-x-2">
                             <input class="rounded text-blue-900" type="checkbox" name="etat[]" value="confirmed"><label
