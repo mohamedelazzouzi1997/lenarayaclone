@@ -3,7 +3,9 @@
 @section('title')
     Reservation | Le Blokk
 @endsection
-
+@section('befor-style')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+@endsection
 @section('styles')
     <link rel="stylesheet" href="{{ asset('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/jqueryConfirm.css') }}">
@@ -49,9 +51,9 @@
                         @method('DELETE')
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 mb-3">
                             <div class="text-start">
-                                <a href=""
-                                    class="px-3 py-2 bg-slate-900 shadow-xl hover:bg-slate-800 text-white rounded ">EXEL
-                                </a>
+                                <button type="button" data-toggle="modal" data-target="#exportBooking"
+                                    class="px-3 py-2 bg-slate-900 shadow-xl hover:bg-slate-800 text-white rounded ">Export
+                                </button>
                                 <button disabled id="deleteEventButton" name="deleteEventButton" type="submit"
                                     class="btn shadow-xl btn-danger waves-effect"><i class="zmdi zmdi-delete"></i>
                                     Supprimé</button>
@@ -62,7 +64,7 @@
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
                                     <tr>
-                                        <th data-orderable="false"> <input id="makeAllChecked" type="checkbox"
+                                        <th data-orderable="false"> <input class="text-blue-900 rounded" id="makeAllChecked" type="checkbox"
                                                 name="checkallbox"></th>
                                         <th>Date</th>
                                         <th>ID</th>
@@ -82,7 +84,7 @@
                                         @else
                                         pending @endif">
                                             <td>
-                                                <input class="evenCheckBox" type="checkbox" @checked(false)
+                                                <input class="evenCheckBox text-blue-900 rounded" type="checkbox" @checked(false)
                                                     name="bookings[]" value="{{ $res->id }}">
                                             </td>
                                             <td>{{ $res->date->format('F d, Y') . ' ' . $res->time }}</td>
@@ -108,6 +110,7 @@
             </div>
         </div>
     </div>
+    @include('modal.expordReservationModal')
 @endsection
 
 
@@ -201,7 +204,13 @@
             }).hover(function() {
                 $(this).toggleClass('hover');
             });
-
+            $('#exportDate').change(function() {
+                if ($(this).val() == 'range') {
+                    $('#rangeDate').removeClass('d-none');
+                } else {
+                    $('#rangeDate').addClass('d-none');
+                }
+            })
 
         });
     </script>

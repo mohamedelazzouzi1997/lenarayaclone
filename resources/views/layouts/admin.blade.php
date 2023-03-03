@@ -16,9 +16,9 @@
     <script src="https://kit.fontawesome.com/f4eca1ee68.js" crossorigin="anonymous"></script>
     {{-- <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}"> --}}
 
-    @vite('resources/css/app.css')
     <link rel="stylesheet" href="{{ asset('css/adminstyle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+    @vite('resources/css/app.css')
     <link rel="stylesheet" href="{{ asset('assets/css/style.min.css') }}">
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
     @yield('styles')

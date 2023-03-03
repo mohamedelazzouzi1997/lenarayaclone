@@ -46,6 +46,7 @@ Route::middleware(['auth','is_admin'])->group(function () {
     Route::delete('/reservation/multiple/delete', [ReservationController::class,'destroy'])->name('reservation.destroy');
     Route::get('/reservation/{id}/edit', [ReservationController::class,'edit'])->name('reservation.edit');
     Route::put('/reservation/{id}/update', [ReservationController::class,'update'])->name('reservation.update');
+    Route::post('/reservation/export',[ReservationController::class,'export'])->name('reservation.export');
 });
 
 

@@ -121,7 +121,7 @@
                 </tr>
 
                 <tr>
-                    <td class="title" colspan="2">Votre réservation au BLOKK est en attente</td>
+                    <td class="title" colspan="2">Votre réservation au BLOKK est Rejected</td>
                 </tr>
                 <tr>
                     <td class="content" colspan="2">

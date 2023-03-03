@@ -67,6 +67,7 @@ class ReservationController extends Controller
     public function reject(Request $request,$id){
 
         $res = Resevation::findOrfail($id);
+        $emailMessage = $request->emailMessage;
 
         $reservation_mail = $res->email;
 
@@ -75,7 +76,7 @@ class ReservationController extends Controller
         ]);
 
         if($res)
-            Mail::to($reservation_mail)->send(new ReservationEmail($res,'reject'));
+            Mail::to($reservation_mail)->send(new ReservationEmail($res,'reject',$emailMessage ));
 
         session()->flash('warning','Rservation a été Rejecté avec succée');
         return back();
@@ -103,6 +104,7 @@ class ReservationController extends Controller
     public function delete(Request $request,$id){
         $res = Resevation::findOrfail($id);
 
+        $emailMessage = $request->emailMessage;
 
         $reservation_mail = $res->email;
 
@@ -110,7 +112,7 @@ class ReservationController extends Controller
         $res->delete();
 
         if($res)
-            Mail::to($reservation_mail)->send(new ReservationEmail($res,'reject'));
+            Mail::to($reservation_mail)->send(new ReservationEmail($res,'reject',$emailMessage ));
 
         session()->flash('delete','Rservation a été supprimé avec succée');
         return to_route('dashboard');
@@ -157,4 +159,21 @@ class ReservationController extends Controller
         return back();
     }
 
+    public function export(Request $request){
+
+        if($request->date== 'upcoming' ){
+            $reservations = Resevation::whereDate('date','>',Carbon::today())->whereIn('status',$request->etat)->get();
+        }elseif($request->date== 'range'){
+            $Filter_Date_From = $request->start ?? Carbon::now();
+            $Filter_Date_To = $request->end ?? Carbon::now();
+            $reservations = Resevation::whereDate('date', '>=', $Filter_Date_From)
+                                        ->whereDate('date', '<=', $Filter_Date_To)
+                                        ->whereIn('status',$request->etat)->get();
+            
+        }else{
+            $reservations = Resevation::whereDate('date',Carbon::today())->whereIn('status',$request->etat)->get();
+            
+        }
+        
+    }
 }
