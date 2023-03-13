@@ -124,13 +124,18 @@
                 </tr>
 
                 <tr>
-                    <td class="title" colspan="2">Votre réservation au NARAYA est Rejecté</td>
+                    <td class="title" colspan="2">Votre réservation au LE NARAYA n'a pas été acceptée</td>
                 </tr>
                 <tr>
                     <td class="content" colspan="2">
                         <p>Merci <span style=" font-weight:bold"> {{ $res->full_name }},</span></p>
                         <p style="margin: 10px 0px">
-                            {{ $emailMessage }}
+                            @if ($emailMessage == '')
+                                Donnez-nous quelques instants pour nous assurer que nous avons de la place pour vous.
+                                Nous sommes complets ou pas ouverts à l'heure que vous avez demandée :
+                            @else
+                                {{ $emailMessage }}
+                            @endif
                         </p>
                         <p style="margin: 10px 0px; font-weight:bold">Les détails de votre reservation:</p>
                         <p>{{ $res->full_name }}</p>

@@ -13,8 +13,9 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
                     <x-nav-link class="text-white" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        Bookings @if (isset($bokking_counts))
-                            <span class="px-2 py-1 mx-2 bg-danger rounded-full text-white">{{ $bokking_counts }}</span>
+                        Bookings @if (isset($bookings))
+                            <span
+                                class="px-2 py-1 mx-2 bg-danger rounded-full text-white">{{ $bookings->count() }}</span>
                         @endif
                     </x-nav-link>
                 </div>
@@ -29,7 +30,7 @@
                         <x-slot name="trigger">
 
                             <span class="inline-flex rounded-md">
-                                <button type="button"
+                                <button style="color:white" type="button"
                                     class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-700 bg-black hover:text-gray-200 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
                                     {{ Auth::user()->name }}
 

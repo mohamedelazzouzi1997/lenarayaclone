@@ -50,7 +50,7 @@
                             Pending</option>
                         <option @if ($res->status == 'confirmed') selected @endif value="confirmed">
                             Confirmed</option>
-                        <option @if ($res->status == 'declined') selected @endif value="pending">
+                        <option @if ($res->status == 'declined') selected @endif value="declined">
                             Closed</option>
                     </select>
                     <div class="text-start mt-4 space-x-4">

@@ -25,10 +25,10 @@
 </head>
 
 <body class="bg-slate-100">
-
-    @if (!request()->route()->getName() == 'profile.show')
+    @if (request()->route()->getName() != 'profile.show' &&
+            request()->route()->getName() != 'dashboard')
         @php
-            $bokking_counts = app\Models\Resevation::where('status', 'pending')->count();
+            $bookings = app\Models\Resevation::all();
         @endphp
     @endif
     @include('navigation-menu')

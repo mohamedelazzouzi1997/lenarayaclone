@@ -13,7 +13,7 @@
 <body>
     <div style="padding:15px 30px;">
         <div>
-            <span>LE NARAYA</span> <span style="float:right">Booking from {{ $date }}</span>
+            <span>LE NARAYA</span> <span style="float:right"> {{ $date }} Bookings</span>
         </div>
         <hr>
         @foreach ($reservations as $res)

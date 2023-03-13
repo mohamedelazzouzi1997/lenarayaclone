@@ -39,13 +39,58 @@
 @endsection
 
 @section('content')
+    @php
+        $bookings = app\Models\Resevation::all();
+        $booking_counts = $bookings->groupBy('status')->map(function ($status) {
+            return $status->count();
+        });
+    @endphp
     <div class="mt-10">
         <h1 class="text-center">BOOKINGS</h1>
         <div class="col-lg-12">
             <div class="card">
 
                 <div class="body shadow-2xl px-20">
-
+                    <div class="row clearfix justify-center space-x-3 my-4">
+                        @foreach ($booking_counts as $key => $bokking)
+                            @if ($key == 'pending')
+                                <div class="col-lg-3 col-md-6 col-sm-6 bg-red-200">
+                                    <div class="state_w1 mb-1 mt-1">
+                                        <div class="d-flex justify-content-center">
+                                            <div>
+                                                <h5 class="text-center">{{ $bokking }}</h5>
+                                                <span><i class="fa-solid fa-clock text-yellow-600"></i>
+                                                    {{ $key }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @elseif($key == 'declined')
+                                <div class="col-lg-3 col-md-6 col-sm-6 bg-yellow-200">
+                                    <div class="state_w1 mb-1 mt-1">
+                                        <div class="d-flex justify-content-center">
+                                            <div>
+                                                <h5 class="text-center">{{ $bokking }}</h5>
+                                                <span><i class="fa-solid fa-x text-red-600"></i> {{ $key }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @elseif($key == 'confirmed')
+                                <div class="col-lg-3 col-md-6 col-sm-6 bg-teal-200">
+                                    <div class="state_w1 mb-1 mt-1">
+                                        <div class="d-flex justify-content-center">
+                                            <div>
+                                                <h5 class="text-center">{{ $bokking }}</h5>
+                                                <span><i class="fa-solid fa-square-check text-green-800"></i>
+                                                    {{ $key }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
                     <form id="allEventForm" action="{{ route('reservation.destroy') }}" method="post" autocomplete="off">
                         @csrf
                         @method('DELETE')
@@ -64,8 +109,8 @@
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
                                     <tr>
-                                        <th data-orderable="false"> <input class="text-blue-900 rounded" id="makeAllChecked" type="checkbox"
-                                                name="checkallbox"></th>
+                                        <th data-orderable="false"> <input class="text-blue-900 rounded" id="makeAllChecked"
+                                                type="checkbox" name="checkallbox"></th>
                                         <th>Date</th>
                                         <th>ID</th>
                                         <th>Nom</th>
@@ -84,11 +129,13 @@
                                         @else
                                         pending @endif">
                                             <td>
-                                                <input class="evenCheckBox text-blue-900 rounded" type="checkbox" @checked(false)
-                                                    name="bookings[]" value="{{ $res->id }}">
+                                                <input class="evenCheckBox text-blue-900 rounded" type="checkbox"
+                                                    @checked(false) name="bookings[]"
+                                                    value="{{ $res->id }}">
                                             </td>
                                             <td>{{ $res->date->format('F d, Y') . ' ' . $res->time }}</td>
-                                            <td><a href="{{ route('reservation.show', $res->id) }}">#{{ $res->id }}</a>
+                                            <td><a
+                                                    href="{{ route('reservation.show', $res->id) }}">#{{ $res->id }}</a>
                                             </td>
                                             <td>{{ $res->full_name }}</td>
                                             <td>{{ $res->email }}</td>
