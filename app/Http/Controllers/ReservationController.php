@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 // use Barryvdh\DomPDF\Facade as PDF;
 // use Barryvdh\DomPDF\PDF;
-use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Resevation;
 use Illuminate\Http\Request;
 use App\Mail\ReservationEmail;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Exports\ReservationExport;
 use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Resources\ReservationResource;
 
 class ReservationController extends Controller
 {
@@ -34,7 +35,6 @@ class ReservationController extends Controller
             'email'=> 'required' ,
             'phone'=> 'required' ,
             'date'=> 'required' ,
-            'time'=> 'required' ,
             'number_of_persons'=> 'required' ,
         ]);
 
@@ -59,13 +59,12 @@ class ReservationController extends Controller
             'email'=> $request->email ,
             'phone'=> $request->phone ,
             'date'=> Carbon::parse($request->date)->format('Y-m-d') ,
-            'time'=> $request->time ,
             'number_of_persons'=> $request->number_of_persons ,
             'message'=> $request->message ,
             'origin'=> $origin_to_store,
         ]);
         \session()->flash('success','Merci votre demande de réservation est en attente de confirmation. Les mises à jour seront envoyées à l\'adresse e-mail que vous avez fournie.');
-            Mail::to($request->email)->send(new ReservationEmail($res,'reserve'));
+            Mail::to($request->email)->send(new ReservationEmail($res,'reserve','no message'));
         return back();
     }
 
@@ -145,21 +144,32 @@ class ReservationController extends Controller
             'email'=> 'required' ,
             'phone'=> 'required' ,
             'date'=> 'required' ,
-            'time'=> 'required' ,
             'status'=> 'required' ,
             'number_of_persons'=> 'required' ,
         ]);
-        $res = Resevation::findOrfail($id);
+        if($request->status == 'declined'){
+            $status = 'reject';
+        }elseif($request->status == 'confirmed'){
+            $status = 'confirm';
 
+        }else{
+            $status = 'pending';
+        }
+        $res = Resevation::findOrfail($id);
+        $emailMessage = '';
        $res->update([
             'full_name'=> $request->name ,
             'email'=> $request->email ,
             'phone'=> $request->phone ,
             'date'=> Carbon::parse($request->date)->format('Y-m-d') ,
-            'time'=> $request->time,
             'status'=> $request->status,
             'number_of_persons'=> $request->number_of_persons,
         ]);
+
+        if($request->has('send_email'))
+            Mail::to($request->email)->send(new ReservationEmail($res,$status,$emailMessage ));
+
+
         session()->flash('success','La reservation a été modifier.');
         return back();
     }
@@ -169,7 +179,7 @@ class ReservationController extends Controller
         if($request->date== 'upcoming' ){
 
             $date = 'upcoming';
-            $reservations = Resevation::whereDate('date','>',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','time','message','status']);
+            $reservations = Resevation::whereDate('date','>',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','message','status']);
         }elseif($request->date== 'range'){
             $date = 'range';
 
@@ -178,25 +188,27 @@ class ReservationController extends Controller
 
             $reservations = Resevation::whereDate('date', '>=', $Filter_Date_From)
                                         ->whereDate('date', '<=', $Filter_Date_To)
-                                        ->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','time','message','status']);
+                                        ->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','message','status']);
 
         }elseif($request->date== 'today'){
             $date = 'today';
-            $reservations = Resevation::whereDate('date','>',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','time','message','status']);
-
-            // $reservations = Resevation::whereDate('date',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','time','message','status']);
-        }
-
-        if($request->file_type == 'pdf'){
-            $pdf = Pdf::loadView('pdf.reservation', [
-                'reservations'=> $reservations,
-                'date' => $date
-            ]);
-            return $pdf->download($date.'_Reservation.pdf');
-        }else{
-            return Excel::download(new ReservationExport($reservations), $date.'_Reservation.xlsx');
+            $reservations = Resevation::whereDate('date',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','message','status']);
 
         }
+
+            //this resource for change date format
+            $reservations = ReservationResource::collection($reservations);
+
+            if($request->file_type == 'pdf'){
+                $pdf = Pdf::loadView('pdf.reservation', [
+                    'reservations'=> $reservations,
+                    'date' => $date
+                ]);
+                return $pdf->download($date.'_Reservation.pdf');
+            }else{
+                return Excel::download(new ReservationExport($reservations), $date.'_Reservation.xlsx');
+
+            }
 
     }
 }

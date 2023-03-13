@@ -16,19 +16,18 @@ use App\Http\Controllers\ReservationController;
 |
 */
 
-Route::get('/international', function () {
-    return view('clients.pages.internationale');
-})->name('internationale');
 
-Route::get('/cuisine-japonais', function () {
-    return view('clients.pages.cuisine-japonais');
-})->name('cuisine-japonais');
+Route::get('/', function () {
+    return view('clients.home');
+})->name('home.index');
 
-Route::get('/nos-spectacles', function () {
-    return view('clients.pages.nos-spectacles');
-})->name('nos-spectacles');
+Route::get('/internationale', function () {
+    return view('clients.pages.menu');
+})->name('menu');
 
-
+Route::get('/contact', function () {
+    return view('clients.pages.contact');
+})->name('contact');
 //reservation route
 
 Route::post('reservation/store',[ReservationController::class,'store'])->name('reservation.store');
@@ -50,17 +49,17 @@ Route::middleware(['auth','is_admin'])->group(function () {
 });
 
 
-Route::get('/{origin?}', function ($origin = 'direct') {
+Route::get('/resa/{origin?}', function ($origin = 'direct') {
     $minutes = 15;
 
-    if(Cookie::get('leblokk_origin')){
-        $origin = Cookie::get('leblokk_origin');
-        return view('clients.home',compact('origin'));
+    if(Cookie::get('lenaraya_origin')){
+        $origin = Cookie::get('lenaraya_origin');
+        return view('clients.pages.reservation',compact('origin'));
 
     }else{
-        Cookie::queue('leblokk_origin', $origin, $minutes);
+        Cookie::queue('lenaraya_origin', $origin, $minutes);
 
     }
 
-    return view('clients.home',compact('origin'));
-})->name('home.index');
+    return view('clients.pages.reservation',compact('origin'));
+})->name('reservation');

@@ -36,7 +36,6 @@ class ReservationExport implements FromCollection,WithHeadings,ShouldAutoSize,Wi
             'Email',
             'Téléphone',
             'Date',
-            'Time',
             'Message',
             'Status',
         ];

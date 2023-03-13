@@ -13,18 +13,16 @@
 <body>
     <div style="padding:15px 30px;">
         <div>
-            <span>LE BLOKK</span> <span style="float:right">Booking from {{ $date }}</span>
+            <span>LE NARAYA</span> <span style="float:right">Booking from {{ $date }}</span>
         </div>
         <hr>
         @foreach ($reservations as $res)
             <div style="margin: 5px 0px;">{{ $res->date->format('F d, Y') }}</div>
 
             <div style="border:1px solid black">
-                <div
-                    style="padding:10px; display: flex; justify-content: space-between; background-color: rgb(235, 235, 235);">
-                    <div>{{ $res->full_name }}</div>
-                    <div style="color:red">{{ $res->status }}</div>
-                    <div>{{ $res->time }}</div>
+                <div style="padding:10px; background-color: rgb(235, 235, 235);">
+                    <span>{{ $res->full_name }}</span>
+                    <span style="color:red;float:right">{{ $res->status }}</span>
                 </div>
                 <div style="padding: 10px;">
                     <div style="margin-top: 5px;">

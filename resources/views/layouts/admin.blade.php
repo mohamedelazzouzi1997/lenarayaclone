@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('title')</title>
-    <link rel="icon"
-        href="https://leblokkmarrakech.com/wp-content/uploads/2021/04/cropped-android-chrome-512x512-2-32x32.png"
-        sizes="32x32" />
+    <link rel="icon" href="{{ asset('images/icon.png') }}" sizes="32x32" />
+
     @yield('befor-style')
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
     <script src="https://kit.fontawesome.com/f4eca1ee68.js" crossorigin="anonymous"></script>
     {{-- <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}"> --}}
 
@@ -25,9 +25,12 @@
 </head>
 
 <body class="bg-slate-100">
-    @php
-        $bokking_counts = app\Models\Resevation::where('status', 'pending')->count();
-    @endphp
+
+    @if (!request()->route()->getName() == 'profile.show')
+        @php
+            $bokking_counts = app\Models\Resevation::where('status', 'pending')->count();
+        @endphp
+    @endif
     @include('navigation-menu')
     @yield('content')
 

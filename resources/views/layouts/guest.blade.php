@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Le Blokk</title>
+    <script src="https://kit.fontawesome.com/f4eca1ee68.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">

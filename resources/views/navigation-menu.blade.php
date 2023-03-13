@@ -1,20 +1,21 @@
-<nav x-data="{ open: false }" class="bg-white border-b  border-gray-100 drop-shadow-lg">
+<nav x-data="{ open: false }" class="bg-black border-b  border-gray-100 drop-shadow-lg">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                <div class="shrink-0 flex items-center ">
+                    <a class="" href="{{ route('dashboard') }}">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        Bookings <span
-                            class="px-2 py-1 mx-2 bg-danger rounded-full text-white">{{ $bokking_counts }}</span>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
+                    <x-nav-link class="text-white" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        Bookings @if (isset($bokking_counts))
+                            <span class="px-2 py-1 mx-2 bg-danger rounded-full text-white">{{ $bokking_counts }}</span>
+                        @endif
                     </x-nav-link>
                 </div>
             </div>

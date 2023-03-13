@@ -14,7 +14,6 @@ class Resevation extends Model
         'email',
         'phone',
         'date',
-        'time',
         'number_of_persons',
         'message',
         'origin',

@@ -1,41 +1,36 @@
-    <div class="relative px-5 md:px-10 py-5 bg-fixed bg-center bg-cover flex justify-center items-center"
+    <div class="relative px-6 md:px-48 py-5 bg-fixed bg-center bg-cover flex justify-center items-center"
         style="background-image: url('{{ asset('images/' . $img) }}')">
-        <div class="absolute bottom-0 right-0 left-0 top-0 bg-black opacity-60">
+        {{-- <div class="absolute bottom-0 right-0 left-0 top-0 bg-black opacity-60">
 
-        </div>
+        </div> --}}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 z-10">
-            <div class="text-center">
-                <img data-aos="fade-down" class="" src="{{ asset('images/logo.png') }}" alt="logo">
+            <div class="text-center md:px-16">
+                <img width="250px" class="mx-auto" src="{{ asset('images/logo.png') }}" alt="logo">
                 <div data-aos="fade-down" id="about" class="text-lg text-justify text-white font-semibold">
-                    Le Blokk est un restaurant bar international, marocain et japonais à thème, musical Live show qui
-                    vous
-                    propose un dîner spectacle incontournable à la Palmeraie dans un cadre exceptionnel.
+                    Electro House dans les oreilles, cocktail dans les mains, des tapas à tomber !<br>
+                    Passez une soirée satisfaisante !
                 </div>
                 <div class="text-center mx-auto">
-                    <p data-aos="fade-down" class="text-orange-300 font-extrabold text-3xl text-start my-4 fw-JOSEF">
+                    <p data-aos="fade-down" class="text-white font-semibold text-3xl text-start my-4 fw-JOSEF">
                         INFOLINE
                     </p>
                     <ul data-aos="fade-down" class="text-start text-white">
-                        <li class="text-2xl font-semibold"><i class="fa-solid fa-phone mr-5 text-orange-300"></i><a
-                                href="tel:+212674334334">+212 674 334 334</a></li>
+                        <li class="text-2xl font-semibold"><i class="fa-solid text-white fa-phone mr-5 "></i><a
+                                href="tel:+212669334334">+212 669 33 43 34</a></li>
                         <li class="text-2xl font-semibold"><i
-                                class="fa-solid fa-at mr-5 text-orange-300"></i>booking@leblokk.com</li>
+                                class="fa-solid text-white fa-at mr-5 "></i>booking@lenaraya.com
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.5618583476394!2d-7.992444084988193!3d31.683348946246614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafeda4f7d36457%3A0x310239a46feb13e7!2sLe%20Blokk%20(%20Restaurant%20)!5e1!3m2!1sen!2sma!4v1677689179741!5m2!1sen!2sma"
-                    width="100%" height="450" style="border:1px solid #fff;" allowfullscreen="" loading="lazy"
+                <iframe class="w-full"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1740.5926524141705!2d-7.991725911754402!3d31.68317732857919!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafed918fc3d9b7%3A0x24260ac7b8ddecf5!2sLe%20Naraya!5e1!3m2!1sen!2sma!4v1678099119354!5m2!1sen!2sma"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
-                {{-- <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3395.1908945983655!2d-7.992444085512597!3d31.68334894624762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafeda4f7d36457%3A0x310239a46feb13e7!2sLe%20Blokk%20(%20Restaurant%20)!5e0!3m2!1sen!2sma!4v1675164805505!5m2!1sen!2sma"
-                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
-                <p class="text-2xl font-semibold text-white text-center mt-5">
+                <p class="text-sm font-semibold text-white text-center mt-5">
                     <i class="fa-solid fa-location-dot text-orange-300"></i> Route des Jardins de la Palmeraie,
-                    Marrakech,
-                    Maroc
+                    Marrakech, Maroc.
                 </p>
             </div>
         </div>

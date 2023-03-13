@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Reservation | Le Blokk
+    Reservation | Le Naraya
 @endsection
 @section('befor-style')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />

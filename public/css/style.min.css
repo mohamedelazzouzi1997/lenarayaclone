@@ -8,7 +8,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Explora&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 html {
     overflow-x: hidden;
 }
@@ -479,8 +479,8 @@ a:hover {
         padding-top: 100px;
     }
     #navbar-header {
-        position: fixed;
-        top: 0;
+        /* position: fixed;
+        top: 0; */
         height: auto;
         width: 100%;
         background-color: #fff;
@@ -530,7 +530,7 @@ a:hover {
 /*=====  End of RESPONSIVE  ======*/
 
 .bg-dark {
-    background: #000 !important;
+    background: rgba(0, 0, 0, 0.8) !important;
 }
 
 .dropdown-menu {
@@ -546,7 +546,7 @@ a:hover {
 }
 
 .fw-josef {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif !important;
 }
 
 .fw-explora {
@@ -554,13 +554,13 @@ a:hover {
 }
 
 .link-hover {
-    --s: 0.1em;
+    --s: .3em;
     /* the thickness of the line */
-    --c: #f7bc70;
+    --c: #FC7CDA;
     /* the color */
-    color: #FFF;
+    color: #FC7CDA;
     padding-bottom: var(--s);
-    background: linear-gradient(90deg, var(--c) 50%, #000000 0) calc(100% - var(--_p, 0%))/200% 100%, linear-gradient(var(--c) 0 0) 0% 100%/var(--_p, 0%) var(--s) no-repeat;
+    background: linear-gradient(90deg, var(--c) 50%, #FC7CDA 0) calc(100% - var(--_p, 0%))/200% 100%, linear-gradient(var(--c) 0 0) 0% 100%/var(--_p, 0%) var(--s) no-repeat;
     -webkit-background-clip: text, padding-box;
     background-clip: text, padding-box;
     transition: 0.5s;
@@ -580,21 +580,21 @@ a:hover {
 
 @font-face {
     font-family: caviar;
-    src: url('./../font/CaviarDreams_Bold.ttf');
+    src: url('../fonts/CaviarDreams_Bold.ttf');
 }
 
 .fw-caviar {
-    font-family: caviar !important;
+    font-family: 'caviar' !important;
 }
 
 .text-orange-300 {
-    color: #BB9656 !important
+    color: #FC7CDA !important
 }
 
 .border-orange-300 {
-    border-color: #BB9656 !important;
+    border-color: #FC7CDA !important;
 }
 
 .bg-orange-300 {
-    background-color: #BB9656 !important;
+    background-color: #FC7CDA !important;
 }

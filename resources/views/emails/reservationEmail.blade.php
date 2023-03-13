@@ -88,19 +88,22 @@
         @if ($status == 'confirm')
             <table>
                 <tr>
-                    <td class="header" colspan="2">LE BLOKK</td>
+                    <td class="header" colspan="2">LE NARAYA</td>
                 </tr>
 
                 <tr>
-                    <td class="title" colspan="2">Votre réservation à LE BLOKK est confirmée.</td>
+                    <td class="title" colspan="2">Votre réservation à LE NARAYA est confirmée.</td>
                 </tr>
                 <tr>
                     <td class="content" colspan="2">
                         <p>Bonjour <span style=" font-weight:bold"> {{ $res->full_name }},</span></p>
                         <p style="margin: 10px 0px">
-                            {{-- Votre demande de réservation a été confirmée. Nous nous réjouissons de vous accueillir
-                            prochainement. --}}
-                            {{ $emailMessage }}
+                            @if ($emailMessage == '')
+                                Votre demande de réservation a été confirmée. Nous nous réjouissons de vous accueillir
+                                prochainement.
+                            @else
+                                {{ $emailMessage }}
+                            @endif
                         </p>
                         <p style="margin: 10px 0px; font-weight:bold">Votre réservation:</p>
                         <p>{{ $res->full_name }}</p>
@@ -108,7 +111,7 @@
                         <p> {{ $res->date->format('F d, Y') . ' ' . $res->time }}</p>
                         <p style="margin:20px 0px;font-style: italic;">ce message a été envoyé par <a
                                 style="color:rgb(29, 208, 253); font-weight:bold;text-decoration:none;font-style: italic;"
-                                href="https://leblokkmarrakech.com/">LE BLOKK</a> à
+                                href="https://leNARAYAmarrakech.com/">LE NARAYA</a> à
                             {{ Carbon\Carbon::now()->addHour()->format('F d, Y g:i A') }}</p>
                     </td>
                 </tr>
@@ -117,23 +120,16 @@
         @elseif ($status == 'reject')
             <table>
                 <tr>
-                    <td class="header" colspan="2">LE BLOKK</td>
+                    <td class="header" colspan="2">LE NARAYA</td>
                 </tr>
 
                 <tr>
-                    <td class="title" colspan="2">Votre réservation au BLOKK est Rejected</td>
+                    <td class="title" colspan="2">Votre réservation au NARAYA est Rejecté</td>
                 </tr>
                 <tr>
                     <td class="content" colspan="2">
                         <p>Merci <span style=" font-weight:bold"> {{ $res->full_name }},</span></p>
                         <p style="margin: 10px 0px">
-                            {{-- Donnez-nous quelques instants pour nous assurer que nous avons de la place pour vous.
-                            Vous
-                            recevrez bientôt un autre courriel de notre part. Si cette demande a été faite en dehors
-                            de
-                            nos heures normales de travail,
-                            il se peut que nous ne puissions pas la confirmer avant que nous soyons à nouveau
-                            ouverts. --}}
                             {{ $emailMessage }}
                         </p>
                         <p style="margin: 10px 0px; font-weight:bold">Les détails de votre reservation:</p>
@@ -142,7 +138,44 @@
                         <p> {{ $res->date->format('F d, Y') . ' ' . $res->time }}</p>
                         <p style="margin:20px 0px;font-style: italic;">ce message a été envoyé par <a
                                 style="color:rgb(29, 208, 253); font-weight:bold;text-decoration:none;font-style: italic;"
-                                href="https://leblokkmarrakech.com/">LE BLOKK</a> à
+                                href="https://leNARAYAmarrakech.com/">LE NARAYA</a> à
+                            {{ Carbon\Carbon::now()->addHour()->format('F d, Y g:i A') }}</p>
+                    </td>
+                </tr>
+
+            </table>
+        @elseif ($status == 'pending')
+            <table>
+                <tr>
+                    <td class="header" colspan="2">LE NARAYA</td>
+                </tr>
+
+                <tr>
+                    <td class="title" colspan="2">Votre réservation au NARAYA est en attante</td>
+                </tr>
+                <tr>
+                    <td class="content" colspan="2">
+                        <p>Merci <span style=" font-weight:bold"> {{ $res->full_name }},</span></p>
+                        <p style="margin: 10px 0px">
+                            @if ($emailMessage == '')
+                                Donnez-nous quelques instants pour nous assurer que nous avons de la place pour vous.
+                                Vous
+                                recevrez bientôt un autre courriel de notre part. Si cette demande a été faite en dehors
+                                de
+                                nos heures normales de travail,
+                                il se peut que nous ne puissions pas la confirmer avant que nous soyons à nouveau
+                                ouverts.
+                            @else
+                                {{ $emailMessage }}
+                            @endif
+                        </p>
+                        <p style="margin: 10px 0px; font-weight:bold">Les détails de votre reservation:</p>
+                        <p>{{ $res->full_name }}</p>
+                        <p>{{ $res->number_of_persons }} Personnes</p>
+                        <p> {{ $res->date->format('F d, Y') . ' ' . $res->time }}</p>
+                        <p style="margin:20px 0px;font-style: italic;">ce message a été envoyé par <a
+                                style="color:rgb(29, 208, 253); font-weight:bold;text-decoration:none;font-style: italic;"
+                                href="https://leNARAYAmarrakech.com/">LE NARAYA</a> à
                             {{ Carbon\Carbon::now()->addHour()->format('F d, Y g:i A') }}</p>
                     </td>
                 </tr>
@@ -151,24 +184,24 @@
         @elseif ($status == 'reserve')
             <table>
                 <tr>
-                    <td class="header" colspan="2">LE BLOKK</td>
+                    <td class="header" colspan="2">LE NARAYA</td>
                 </tr>
 
                 <tr>
-                    <td class="title" colspan="2">Votre réservation au BLOKK est en attente</td>
+                    <td class="title" colspan="2">Votre réservation au NARAYA est en attente</td>
                 </tr>
                 <tr>
                     <td class="content" colspan="2">
                         <p>Merci <span style=" font-weight:bold"> {{ $res->full_name }},</span></p>
                         <p style="margin: 10px 0px">
-                            {{-- Donnez-nous quelques instants pour nous assurer que nous avons de la place pour vous.
+                            Donnez-nous quelques instants pour nous assurer que nous avons de la place pour vous.
                             Vous
                             recevrez bientôt un autre courriel de notre part. Si cette demande a été faite en dehors
                             de
                             nos heures normales de travail,
                             il se peut que nous ne puissions pas la confirmer avant que nous soyons à nouveau
-                            ouverts. --}}
-                            {{ $emailMessage }}
+                            ouverts.
+                            {{-- {{ $emailMessage }} --}}
 
                         </p>
                         <p style="margin: 10px 0px; font-weight:bold">Les détails de votre reservation:</p>
@@ -177,7 +210,7 @@
                         <p> {{ $res->date->format('F d, Y') . ' ' . $res->time }}</p>
                         <p style="margin:20px 0px;font-style: italic;">ce message a été envoyé par <a
                                 style="color:rgb(29, 208, 253); font-weight:bold;text-decoration:none;font-style: italic;"
-                                href="https://leblokkmarrakech.com/">LE BLOKK</a> à
+                                href="https://leNARAYAmarrakech.com/">LE NARAYA</a> à
                             {{ Carbon\Carbon::now()->addHour()->format('F d, Y g:i A') }}</p>
                     </td>
                 </tr>

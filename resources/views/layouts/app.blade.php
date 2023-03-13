@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('title')</title>
-    <link rel="icon"
-        href="https://leblokkmarrakech.com/wp-content/uploads/2021/04/cropped-android-chrome-512x512-2-32x32.png"
-        sizes="32x32" />
+    <link rel="icon" href="{{ asset('images/icon.png') }}" sizes="32x32" />
     @yield('befor-style')
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/f4eca1ee68.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
-    @vite('resources/css/app.css')
-    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+    {{-- @vite('resources/css/app.css') --}}
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
     @yield('styles')
 </head>
@@ -38,12 +37,13 @@
     @yield('scripts')
     <script>
         $(window).scroll(function() {
-            if ($(this).scrollTop()) {
+            if ($(this).scrollTop() > 500) {
                 $('#toTop').fadeIn();
-                $('#navtop').addClass('md:fixed md:top-0 md:z-50')
+                $('#navbar-header').fadeOut(100);
             } else {
                 $('#toTop').fadeOut();
-                $('#navtop').removeClass('md:fixed md:top-0 md:z-50')
+                $('#navbar-header').fadeIn(1000);
+
             }
         });
         $("#toTop").click(function() {

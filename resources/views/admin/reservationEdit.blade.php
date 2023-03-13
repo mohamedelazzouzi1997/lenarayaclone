@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Reservation Details
+    Reservation Edit
 @endsection
 
 
@@ -31,9 +31,9 @@
                     <label for="date" class="text-black italic font-extrabold w-full text-start mt-4">Date</label>
                     <input name="date" class="shadow-md form-control" datepicker datepicker-autohide
                         value="{{ $res->date->format('m/d/Y') }}" type="text">
-                    <label for="time" class="text-black italic font-extrabold w-full text-start mt-4">Time</label>
+                    {{-- <label for="time" class="text-black italic font-extrabold w-full text-start mt-4">Time</label>
                     <input name="time" id="timepicker" class="shadow-md form-control" value="{{ $res->time }}"
-                        type="text">
+                        type="text"> --}}
                     <label for="number_of_persons" class="text-black italic font-extrabold w-full text-start mt-4">Nombre
                         personne</label>
                     <select name="number_of_persons" class="rounded border border-black shadow-md ms form-control"
@@ -55,8 +55,8 @@
                     </select>
                     <div class="text-start mt-4 space-x-4">
 
-                        <input type="checkbox" name="send_email" id=""><label for="status"
-                            class="text-black italic font-extrabold   text-start tical"> Send
+                        <input class="text-blue-900 rounded" type="checkbox" name="send_email" id=""><label
+                            for="status" class="text-black italic font-extrabold   text-start tical"> Send
                             Notification</label>
                     </div>
                     <button type="submit" class="btn bg-blue-900 btn-primary btn-block">Edit Booking</button>
