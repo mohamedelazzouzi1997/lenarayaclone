@@ -32,11 +32,11 @@
         $img = 'Rectangle-13-copie-1.png';
     @endphp
     <div id="topdiv"
-        class="px-5 slide_photo flex  bg-no-repeat justify-center items-center relative md:px-48 h-[400px] md:h-screen bg-cover bg-bottom "
+        class="px-5 slide_photo flex  bg-no-repeat justify-center items-center relative md:px-48 h-[400px] md:h-[650px] bg-cover bg-bottom "
         style="background-image: url('{{ asset('images/img-menu-2.jpg') }}')">
 
     </div>
-    <div class="px-6 md:px-60 my-16 text-white">
+    <div class="px-6 md:px-80 my-16 text-white">
         <div class="mx-auto text-center">
             <h2 class="text-center  text-2xl my-6 font-semibold text-fuchsia-900 fw-sans">BIENVENUE
             </h2>

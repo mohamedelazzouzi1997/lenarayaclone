@@ -19,14 +19,14 @@
         $img = 'Rectangle-13-copie-1.png';
     @endphp
     <div id="reservation"
-        class="px-5 flex bg-no-repeat bg-cover justify-center items-center relative md:px-48 md:h-screen bg-bottom"
+        class="px-5 flex bg-no-repeat bg-cover justify-center items-center relative md:px-48 md:h-[600px] bg-bottom"
         style="background-image: url('{{ asset('images/home.jpg') }}')">
         <div class="absolute bottom-0 right-0 left-0 top-0 bg-black opacity-50">
 
         </div>
 
     </div>
-    <div class="px-6 md:px-40 mb-16 mt-8 grid grid-cols-1 md:grid-cols- gap-y-10 gap-x-4">
+    <div class="px-6 md:px-40  mt-8 grid grid-cols-1 md:grid-cols- gap-y-10">
         <div class="text-center">
             <div class="md:hidden">
                 <h3 data-aos="fade-up" class="text-center uppercase text-2xl my-6 font-semibold text-fuchsia-900 fw-sans">
@@ -39,9 +39,9 @@
                     DRINK
                 </h3>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-x-4">
-                <img data-aos="fade-right" class="h-full w-full rounded-lg" src="{{ asset('images/111-1.jpg') }}"
-                    class="" alt="image2">
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center ">
+                <img data-aos="fade-right" class="h-full w-full" src="{{ asset('images/111-1.jpg') }}" class=""
+                    alt="image2">
                 <div data-aos="fade-left" class="text-center">
                     <div class="hidden md:block">
 
@@ -58,7 +58,7 @@
                         </h3>
                     </div>
                     <div data-aos="fade-down"
-                        class="text-lg text-start leading-10 my-5 fw-caviar text-white  font-semibold">
+                        class="text-lg text-start leading-10 my-5 px-3 fw-caviar text-white  font-semibold">
                         Avis aux amateurs de mixologie, et de design, le barman vous concocte avec expertise des
                         Cocktails et rafraîchissements en tout genre.
                     </div>
@@ -66,10 +66,10 @@
             </div>
         </div>
     </div>
-    <div class="md:px-40 bg-no-repeat bg-cover my-16 grid grid-cols-1 md:grid-cols- gap-y-10 gap-x-4"
+    <div class="md:px-40 bg-no-repeat bg-cover  grid grid-cols-1 md:grid-cols- gap-y-10"
         style="background-image: url('{{ asset('images/Rectangle-13-copie-1.png') }}')">
         <div class="text-center">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2  items-center">
 
                 <div data-aos="fade-left" class="text-center">
                     <div data-aos="fade-down"
@@ -100,7 +100,7 @@
             </div>
         </div>
     </div>
-    <div class="px-6 md:px-40 my-16 grid grid-cols-1 md:grid-cols- gap-y-10 gap-x-4">
+    <div class="px-6 md:px-40  grid grid-cols-1 md:grid-cols- gap-y-10">
         <div class="text-center">
             <div class="md:hidden">
                 <h3 data-aos="fade-up" class="text-center uppercase text-2xl my-6 font-semibold text-fuchsia-900  fw-sans">
@@ -113,7 +113,7 @@
                     dj résident
                 </h3>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-x-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center ">
                 <img data-aos="fade-right" class="h-full w-full rounded-lg" src="{{ asset('images/333-1.jpg') }}"
                     class="" alt="image2">
                 <div data-aos="fade-left" class="text-center">
@@ -131,7 +131,7 @@
                         </h3>
                     </div>
                     <div data-aos="fade-down"
-                        class="text-lg text-start leading-10 my-5 fw-caviar text-white  font-semibold">
+                        class="text-lg text-start px-3 leading-10 my-5 fw-caviar text-white  font-semibold">
                         Passez la soirée à danser et a siroter mojito sur mojito au rythme des sons électro présentés
                         par notre DJ résident.
                     </div>

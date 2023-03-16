@@ -5,6 +5,7 @@
 @endsection
 @section('styles')
     <link rel="stylesheet" href="{{ asset('toaster/toaster.css') }}">
+    <link href="{{ asset('css/datepicker.css') }}" rel="stylesheet">
     <style>
         .text-orange-300 {
             color: #AA409C !important
@@ -21,6 +22,18 @@
         button:hover {
             background-color: #AA409C !important;
 
+        }
+
+        .ui-timepicker-viewport {
+            color: #AA409C !important;
+        }
+
+        .bg-orange-400 {
+            background-color: #AA409C !important;
+        }
+
+        .bg-orange-400:hover {
+            background-color: #AA409C !important;
         }
     </style>
 @endsection
@@ -81,7 +94,7 @@
                         @error('date')
                             <span class="text-red-500 mt-2 float-left">{{ $message }}</span>
                         @enderror
-                        <input name="date" value="{{ old('date') }}"
+                        <input id="datepicker" name="date" value="{{ old('date') }}"
                             class="bg-black w-full border border-orange-300 px-3 py-3 text-white" type="date">
                         @error('number_of_persons')
                             <span class="text-red-500 mt-2 float-left">{{ $message }}</span>
@@ -134,7 +147,27 @@
 
 @section('scripts')
     <script src="{{ asset('toaster/toaster.js') }}"></script>
+    <script src="{{ asset('js/datepicker.js') }}"></script>
+
     <script>
+        $(function() {
+            $.datepicker.setDefaults({
+                monthNames: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août",
+                    "Septembre", "Octobre", "Novembre", "Décembre"
+                ]
+            });
+            $("#datepicker").datepicker({
+                minDate: 0,
+                dateFormat: 'mm/dd/yy',
+                inline: true,
+                // numberOfMonths: [1],
+                dayNamesMin: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+                beforeShowDay: function(date) {
+                    var day = date.getDay();
+                    return [(day != 1)];
+                }
+            });
+        });
         const ToasterOptions = {
             "closeButton": false,
             "debug": false,
