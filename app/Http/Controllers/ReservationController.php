@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-// use Barryvdh\DomPDF\Facade as PDF;
-// use Barryvdh\DomPDF\PDF;
 use App\Models\Resevation;
 use Illuminate\Http\Request;
 use App\Mail\ReservationEmail;
@@ -18,11 +16,27 @@ class ReservationController extends Controller
 {
     //
     public function index(){
-        $reservations = Resevation::latest('id')->get();
+        $reservations = Resevation::where('deleted',0)->latest('id')->get();
         // dd($reservations);
         return view('admin.dashboard',compact('reservations'));
     }
+    public function deletedReservation(){
 
+            $reservations = Resevation::latest('id')->where('deleted',1)->get();
+
+        // dd($reservations);
+        return view('admin.deletedReservation',compact('reservations'));
+    }
+    public function restorReservation($id){
+        $res = Resevation::findOrfail($id);
+
+        $res->update([
+            'deleted'=> 0
+        ]);
+
+        session()->flash('success','Rservation a été Restoré avec succée');
+        return to_route('dashboard');
+    }
     public function show($id){
         $res = Resevation::findOrfail($id);
 
@@ -38,11 +52,10 @@ class ReservationController extends Controller
             'number_of_persons'=> 'required' ,
         ]);
 
-        // dd(Carbon::parse($request->date)->format('Y-m-d'));
         $origin_array = [
             'tk' => 'tiktok',
             'in' => 'instagrame',
-            'fb' => 'facebook',
+            'fbads' => 'facebookAds',
             'yt' => 'youtube',
         ];
         $origin_to_store = 'direct';
@@ -112,8 +125,9 @@ class ReservationController extends Controller
 
         $reservation_mail = $res->email;
 
-
-        $res->delete();
+        $res->update([
+            'deleted'=> 1
+        ]);
 
         if($res)
             Mail::to($reservation_mail)->send(new ReservationEmail($res,'reject',$emailMessage ));
@@ -123,8 +137,9 @@ class ReservationController extends Controller
     }
 
     public function destroy(Request $request){
-        // dd($request->bookings);
-        $res = Resevation::whereIn('id',$request->bookings)->delete();
+        $res = Resevation::whereIn('id',$request->bookings)->update([
+            'deleted'=> 1
+        ]);
 
         session()->flash('delete','Rservation a été supprimé avec succée');
         return to_route('dashboard');
@@ -138,7 +153,6 @@ class ReservationController extends Controller
     }
 
     public function update(Request $request,$id){
-
         $request->validate([
             'name'=> 'required' ,
             'email'=> 'required' ,
@@ -179,20 +193,20 @@ class ReservationController extends Controller
         if($request->date== 'upcoming' ){
 
             $date = 'upcoming';
-            $reservations = Resevation::whereDate('date','>',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','message','status']);
+            $reservations = Resevation::where('deleted',0)->whereDate('date','>',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','message','status']);
         }elseif($request->date== 'range'){
             $date = 'range';
 
             $Filter_Date_From = $request->start ?? Carbon::now();
             $Filter_Date_To = $request->end ?? Carbon::now();
 
-            $reservations = Resevation::whereDate('date', '>=', $Filter_Date_From)
+            $reservations = Resevation::where('deleted',0)->whereDate('date', '>=', $Filter_Date_From)
                                         ->whereDate('date', '<=', $Filter_Date_To)
                                         ->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','message','status']);
 
         }elseif($request->date== 'today'){
             $date = 'today';
-            $reservations = Resevation::whereDate('date',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','message','status']);
+            $reservations = Resevation::where('deleted',0)->whereDate('date',Carbon::today())->whereIn('status',$request->etat)->get(['id','full_name','email','phone','date','message','status']);
 
         }
 

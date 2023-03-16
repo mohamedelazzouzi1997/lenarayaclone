@@ -18,9 +18,9 @@
 
     <link rel="stylesheet" href="{{ asset('css/adminstyle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
-    @vite('resources/css/app.css')
+    {{-- @vite('resources/css/app.css') --}}
     <link rel="stylesheet" href="{{ asset('assets/css/style.min.css') }}">
-    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+    <script src="https://cdn.tailwindcss.com"></script>
     @yield('styles')
 </head>
 
@@ -28,7 +28,8 @@
     @if (request()->route()->getName() != 'profile.show' &&
             request()->route()->getName() != 'dashboard')
         @php
-            $bookings = app\Models\Resevation::all();
+            $bookings = app\Models\Resevation::where('deleted', 0)->get();
+            $deleted_bookings = app\Models\Resevation::where('deleted', 1)->get();
         @endphp
     @endif
     @include('navigation-menu')

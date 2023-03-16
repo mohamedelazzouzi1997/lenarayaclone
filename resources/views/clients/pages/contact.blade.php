@@ -28,7 +28,7 @@
         $img = 'Rectangle-13-copie-1.png';
     @endphp
     <div id="topdiv"
-        class="px-5 slide_photo hidden md:flex bg-fixed bg-no-repeat justify-center items-center relative md:px-48 h-[400px] md:h-[600px] bg-contain bg-top "
+        class="px-5 slide_photo hidden md:flex bg-no-repeat justify-center items-center relative md:px-48 h-[400px] md:h-[600px] bg-auto bg-top "
         style="background-image: url('{{ asset('images/slide-contact.jpg') }}')">
 
     </div>

@@ -38,11 +38,11 @@
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link link-hover text-white hover:text-orange-300"
-                                    href="https://dash.leblokk.com/agence/login">Partenaire</a>
+                                    href="https://dash.lenaraya.com/partenaire/login">Partenaire</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link link-hover text-white hover:text-orange-300"
-                                    href="https://dash.leblokk.com/partenaire/login">Agence</a>
+                                    href="https://dash.lenaraya.com/agence/login">Agence</a>
                             </li>
 
                         </div>

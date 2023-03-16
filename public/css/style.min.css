@@ -568,6 +568,7 @@ a:hover {
 
 .link-hover:hover {
     --_p: 100%;
+    color: #FC7CDA !important;
 }
 
 .video-section:hover i {

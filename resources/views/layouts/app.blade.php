@@ -26,7 +26,7 @@
 
     @yield('content')
 
-    <button id="toTop" class="fixed z-30 rounded-md bottom-5 right-5 px-3 py-2 bg-orange-300 text-white"><i
+    <button id="toTop" class="fixed z-30 rounded-md bottom-5 right-5 px-3 py-2 bg-fuchsia-900 text-white"><i
             class="fa-solid fa-chevron-up"></i></button>
 
     @include('layouts.footer')

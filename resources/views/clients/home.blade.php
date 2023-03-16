@@ -7,6 +7,11 @@
 @section('befor-style')
 @endsection
 @section('styles')
+    <style>
+        .text-fuchsia-900 {
+            color: #6E0949 !important;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -14,17 +19,17 @@
         $img = 'Rectangle-13-copie-1.png';
     @endphp
     <div id="reservation"
-        class="px-5 bg-fixed flex bg-no-repeat bg-contain justify-center items-center relative md:px-48 md:h-[750px] bg-containe bg-top"
+        class="px-5 flex bg-no-repeat bg-cover justify-center items-center relative md:px-48 md:h-screen bg-bottom"
         style="background-image: url('{{ asset('images/home.jpg') }}')">
         <div class="absolute bottom-0 right-0 left-0 top-0 bg-black opacity-50">
 
         </div>
 
     </div>
-    <div class="px-6 md:px-52 my-16 grid grid-cols-1 md:grid-cols- gap-y-10 gap-x-4">
+    <div class="px-6 md:px-40 mb-16 mt-8 grid grid-cols-1 md:grid-cols- gap-y-10 gap-x-4">
         <div class="text-center">
             <div class="md:hidden">
-                <h3 data-aos="fade-up" class="text-center uppercase text-2xl my-6 font-extrabold text-fuchsia-900 fw-sans">
+                <h3 data-aos="fade-up" class="text-center uppercase text-2xl my-6 font-semibold text-fuchsia-900 fw-sans">
 
                     welcome
                 </h3>
@@ -41,7 +46,7 @@
                     <div class="hidden md:block">
 
                         <h3 data-aos="fade-up"
-                            class="text-center uppercase text-2xl my-6 font-extrabold text-fuchsia-900  fw-sans">
+                            class="text-center uppercase text-2xl my-6 font-semibold text-fuchsia-900  fw-sans">
 
                             welcome
                         </h3>
@@ -53,7 +58,7 @@
                         </h3>
                     </div>
                     <div data-aos="fade-down"
-                        class="text-2xl text-start md:px-16 leading-10 my-5 fw-caviar text-white  font-semibold">
+                        class="text-lg text-start leading-10 my-5 fw-caviar text-white  font-semibold">
                         Avis aux amateurs de mixologie, et de design, le barman vous concocte avec expertise des
                         Cocktails et rafraîchissements en tout genre.
                     </div>
@@ -61,14 +66,14 @@
             </div>
         </div>
     </div>
-    <div class="md:px-52 bg-no-repeat bg-cover my-16 grid grid-cols-1 md:grid-cols- gap-y-10 gap-x-4"
+    <div class="md:px-40 bg-no-repeat bg-cover my-16 grid grid-cols-1 md:grid-cols- gap-y-10 gap-x-4"
         style="background-image: url('{{ asset('images/Rectangle-13-copie-1.png') }}')">
         <div class="text-center">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 items-center">
 
                 <div data-aos="fade-left" class="text-center">
                     <div data-aos="fade-down"
-                        class="hidden md:block text-2xl text-center leading-10 my-2 fw-caviar text-white  font-semibold">
+                        class="hidden md:block text-lg text-center leading-10 my-2 fw-caviar text-white  font-semibold">
                         En cuisine le Chef, c’est l’allié de vos papilles : ce qu’il vous prépare, c’est savoureux, des
                         Tapas à tomber !
                     </div>
@@ -95,10 +100,10 @@
             </div>
         </div>
     </div>
-    <div class="px-6 md:px-52 my-16 grid grid-cols-1 md:grid-cols- gap-y-10 gap-x-4">
+    <div class="px-6 md:px-40 my-16 grid grid-cols-1 md:grid-cols- gap-y-10 gap-x-4">
         <div class="text-center">
             <div class="md:hidden">
-                <h3 data-aos="fade-up" class="text-center uppercase text-2xl my-6 font-extrabold text-fuchsia-900  fw-sans">
+                <h3 data-aos="fade-up" class="text-center uppercase text-2xl my-6 font-semibold text-fuchsia-900  fw-sans">
 
                     welcome
                 </h3>
@@ -116,7 +121,7 @@
 
                         <img class="mx-auto mb-3 w-[15%] " src="{{ asset('images/line2.png') }}" alt="">
                         <h3 data-aos="fade-up"
-                            class="text-center uppercase text-2xl my-3 font-extrabold text-fuchsia-900  fw-sans">
+                            class="text-center uppercase text-2xl my-3 font-semibold text-fuchsia-900  fw-sans">
 
                             welcome
                         </h3>
@@ -126,7 +131,7 @@
                         </h3>
                     </div>
                     <div data-aos="fade-down"
-                        class="text-2xl text-start leading-10 my-5 fw-caviar text-white md:px-16  font-semibold">
+                        class="text-lg text-start leading-10 my-5 fw-caviar text-white  font-semibold">
                         Passez la soirée à danser et a siroter mojito sur mojito au rythme des sons électro présentés
                         par notre DJ résident.
                     </div>

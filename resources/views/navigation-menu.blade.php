@@ -18,6 +18,12 @@
                                 class="px-2 py-1 mx-2 bg-danger rounded-full text-white">{{ $bookings->count() }}</span>
                         @endif
                     </x-nav-link>
+                    <x-nav-link class="text-white " href="{{ route('deleted.res') }}" :active="request()->routeIs('deleted.res')">
+                        <i class="fa-solid fa-trash mr-1"></i> Bookings @if (isset($deleted_bookings))
+                            <span
+                                class="px-2 py-1 mx-2 bg-danger rounded-full text-white">{{ $deleted_bookings->count() }}</span>
+                        @endif
+                    </x-nav-link>
                 </div>
             </div>
 

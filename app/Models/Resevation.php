@@ -17,6 +17,7 @@ class Resevation extends Model
         'number_of_persons',
         'message',
         'origin',
+        'deleted',
         'status'
     ];
     protected $casts = [ 'date'=>'date'];
