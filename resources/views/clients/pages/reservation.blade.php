@@ -15,8 +15,12 @@
             border-color: #AA409C !important;
         }
 
+        .border-red-600 {
+            border-color: #fd1414 !important;
+        }
+
         .bg-orange-300 {
-            background-color: #AA409C !important;
+            background-color: #AA409C;
         }
 
         button:hover {
@@ -45,9 +49,9 @@
         class="px-5 slide_photo hidden md:flex bg-no-repeat justify-center items-center relative md:px-48 h-[400px] md:h-[600px] bg-auto bg-top "
         style="background-image: url('{{ asset('images/photo-reservation-2.jpg') }}')">
     </div>
-    <div class="px-6 md:px-40 mb-16 ">
+    <div class="px-6 md:px-60 mb-16 ">
         <div class="text-center">
-            <h2 class=" my-4 text-4xl font-semibold font-sans text-orange-300">
+            <h2 class=" my-4 text-4xl font-medium tracking-widest font-sans text-orange-300">
                 RESERVATION
             </h2>
             <p class="text-center fw-caviar font-thin tracking-wider mb-4 leading-10 text-sm md:w-1/2 mx-auto text-white">
@@ -59,12 +63,12 @@
                 Vous pouvez directement réserver via le formulaire ci-dessous !</br>
                 Nous sommes ouverts tous les soirs de 19h30 à 02h sauf Lundi.</p>
             <div class="text-white text-center mx-auto">
-                <h2 class="uppercase text-start text-2xl font-sans font-semibold text-orange-300">
+                <h2 class="uppercase text-start text-2xl font-sans mb-4 font-medium tracking-widest text-orange-300">
                     CONTACT
                 </h2>
                 <div class="">
                     <form action="{{ route('reservation.store') }}" method="post"
-                        class="grid grid-cols-1 md:grid-cols-2 gap-4 space-y-1 font-sans">
+                        class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4 font-sans">
 
                         @csrf
                         <input type="hidden" name="origin" value="{{ $origin }}">
@@ -74,12 +78,11 @@
                                 <i class="fa-regular fa-circle-check"></i> {{ Session::get('success') }}
                             </div>
                         @endif
-                        @error('name')
-                            <span class="text-red-500 mt-2 float-left">{{ $message }}</span>
-                        @enderror
 
                         <input name="name" placeholder="Nom Complete(*)"
-                            class="bg-black w-full border border-orange-300 px-3 py-3 text-white" type="text">
+                            class="bg-black w-full border border-orange-300 @error('name') border-red-600 @enderror  px-3 py-2 text-white"
+                            type="text">
+
                         <div class="hidden md:block text-center space-y-1 md:text-lg md:row-span-6">
                             <iframe class="w-full md:h-[300px]"
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1740.5926524141705!2d-7.991725911754402!3d31.68317732857919!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafed918fc3d9b7%3A0x24260ac7b8ddecf5!2sLe%20Naraya!5e1!3m2!1sen!2sma!4v1678099119354!5m2!1sen!2sma"
@@ -103,41 +106,39 @@
                                 </ul>
                             </div>
                         </div>
-                        @error('email')
-                            <span class="text-red-500 mt-2 float-left">{{ $message }}</span>
-                        @enderror
                         <input name="email" placeholder="Email(*)"
-                            class="bg-black w-full border border-orange-300 px-3 py-3 text-white" type="text">
-                        @error('phone')
-                            <span class="text-red-500 mt-2 float-left">{{ $message }}</span>
-                        @enderror
+                            class="bg-black w-full border border-orange-300 @error('name') border-red-600 @enderror px-3 py-2 text-white"
+                            type="text">
+
                         <input name="phone" placeholder="Téléphone(*)"
-                            class="bg-black w-full border border-orange-300 px-3 py-3 text-white" type="text">
-                        <h2 class="uppercase  text-start font-semibold text-2xl font-sans text-orange-300">
+                            class="bg-black w-full border border-orange-300 @error('name') border-red-600 @enderror px-3 py-2 text-white"
+                            type="text">
+
+                        <h2
+                            class="uppercase flex items-center  text-start font-medium tracking-widest text-2xl font-sans text-orange-300">
                             RÉSERVEZ UNE TABLE
                         </h2>
-                        @error('date')
-                            <span class="text-red-500 mt-2 float-left">{{ $message }}</span>
-                        @enderror
+
                         <input id="datepicker" name="date" value="{{ old('date') }}"
-                            class="bg-black w-full border border-orange-300 px-3 py-3 text-white" type="date">
-                        @error('number_of_persons')
-                            <span class="text-red-500 mt-2 float-left">{{ $message }}</span>
-                        @enderror
+                            class="bg-black w-full border border-orange-300 @error('name') border-red-600 @enderror px-3 py-2 text-white"
+                            type="date">
+
                         <select name="number_of_persons"
-                            class="bg-black w-full border border-orange-300 px-3 py-3 text-white" id="">
+                            class="bg-black w-full border border-orange-300 @error('name') border-red-600 @enderror px-3 py-2 text-white"
+                            id="">
 
                             @for ($i = 1; $i <= 20; $i++)
                                 <option value="{{ $i }}">{{ $i }} Personne</option>
                             @endfor
                         </select>
-                        <h2 class="uppercase font-semibold text-start text-2xl font-sans text-orange-300">
+
+                        <h2 class="uppercase font-medium tracking-widest text-start text-2xl font-sans text-orange-300">
                             Message
                         </h2>
                         <textarea class="bg-black md:col-span-2 w-full border border-orange-300 px-3 py-3 text-white " name="message"
-                            id="" cols="30" rows="10" placeholder="Message"></textarea>
+                            id="" cols="30" rows="7" placeholder="Message"></textarea>
                         <button type="submit"
-                            class="border border-orange-300 text-white bg-gray-700 hover:text-black py-2 px-5 float-left rounded">ENVOYER</button>
+                            class="border text-center md:w-1/4 border-orange-300 text-white bg-gray-700 hover:text-black py-2 px-2 float-left rounded">ENVOYER</button>
                         <div class="md:hidden text-center space-y-1 md:text-lg md:row-span-6">
                             <iframe class="w-full md:h-[300px]"
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1740.5926524141705!2d-7.991725911754402!3d31.68317732857919!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafed918fc3d9b7%3A0x24260ac7b8ddecf5!2sLe%20Naraya!5e1!3m2!1sen!2sma!4v1678099119354!5m2!1sen!2sma"

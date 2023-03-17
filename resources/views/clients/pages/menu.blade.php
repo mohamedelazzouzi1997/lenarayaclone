@@ -42,12 +42,12 @@
             </h2>
             <img class="mx-auto" src="{{ asset('images/line2.png') }}" alt="line">
             <h3 data-aos="fade-up"
-                class="text-center uppercase font-semibold tracking-tighter text-3xl my-4 text-white font-sans">
+                class="text-center uppercase font-semibold tracking-widest text-3xl my-4 text-white font-sans">
 
                 DRINK
             </h3>
         </div>
-        <h3 data-aos="fade-up" class="text-center fw-caviar text-3xl my-3 text-white">
+        <h3 data-aos="fade-up" class="text-center tracking-widest fw-caviar text-3xl my-3 text-white">
             Cocktails Classics
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:my-8 my-16">
@@ -152,7 +152,7 @@
                                     Le Blossom
                                 </span><span class="float-right">120</span>
                             </p>
-                            <p class="text-white text-md leading-10">
+                            <p class="text-white text-md leading-8">
                                 Vodka infusée à la rose, sirop de rose, Extrait de myrtille, jus de citron vert
                             </p>
                         </div>
@@ -163,7 +163,7 @@
                                     Pop star Martini
                                 </span><span class="float-right">120</span>
                             </p>
-                            <p class="text-white text-md leading-10">
+                            <p class="text-white text-md leading-8">
                                 Vodka, fruit de la passion, liqueur fruit de La passion, sirop de vanille, Jus de citron,
                                 prosecco
                             </p>
@@ -175,7 +175,7 @@
                                     Summer wind
                                 </span><span class="float-right">120</span>
                             </p>
-                            <p class="text-white text-md leading-10">
+                            <p class="text-white text-md leading-8">
                                 Gin infusé au romarin, concombre, Purée de kiwi, jus de citron vert
                             </p>
                         </div>
@@ -185,7 +185,7 @@
                                     What Else
                                 </span><span class="float-right">120</span>
                             </p>
-                            <p class="text-white text-md leading-10">
+                            <p class="text-white text-md leading-8">
                                 whisky infusé aux clous de girofle, cannelle, anis, liqueur de café, liqueur de caramel,
                                 nescafé
                             </p>
@@ -204,7 +204,7 @@
                                 Orient Blues
                             </span><span class="float-right">120</span>
                         </p>
-                        <p class="text-white text-md leading-10">
+                        <p class="text-white text-md leading-8">
                             Vodka, fleur d'orangé, curacao bleu, Miel, banane
                         </p>
                     </div>
@@ -222,7 +222,7 @@
                                     La Vie En Rose
                                 </span><span class="float-right">120</span>
                             </p>
-                            <p class="text-white text-md leading-10">
+                            <p class="text-white text-md leading-8">
                                 Vodka, purée de framboise, jus de citron, Triple sec, sprite
                             </p>
                         </div>
@@ -233,7 +233,7 @@
                                     Orient Blues
                                 </span><span class="float-right">120</span>
                             </p>
-                            <p class="text-white text-md leading-10">
+                            <p class="text-white text-md leading-8">
                                 Vodka, fleur d'orangé, curacao bleu, Miel, banane
                             </p>
                         </div>
@@ -244,7 +244,7 @@
                                     The Forest
                                 </span><span class="float-right">120</span>
                             </p>
-                            <p class="text-white text-md leading-10">
+                            <p class="text-white text-md leading-8">
                                 Gin infusé à la lavande, crème de pêche, Sirop de litchi, jus de cranberry, Jus de citron
                                 vert
                             </p>
@@ -255,7 +255,7 @@
                                     L'Enchanteresse
                                 </span><span class="float-right">120</span>
                             </p>
-                            <p class="text-white text-md leading-10">
+                            <p class="text-white text-md leading-8">
                                 Rhum, vodka, gin, liqueur parfait amour, Framboise, jus de citron vert
                             </p>
                         </div>
@@ -430,7 +430,7 @@
             Whisky
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:my-8 my-16">
-            <div class="text-white  md:flex md:justify-start md:items-center">
+            <div class="text-white  md:flex md:justify-start md:items-center md:pt-16">
                 <div class="md:w-full">
 
                     <div class="space-y-5 fw-caviar">
@@ -486,7 +486,7 @@
                 </div>
             </div>
 
-            <div class="text-white  md:flex md:justify-start md:items-center">
+            <div class="text-white  md:flex md:justify-start md:items-center md:pt-16">
                 <div class="md:w-full">
 
                     <div class="space-y-5 fw-caviar">
