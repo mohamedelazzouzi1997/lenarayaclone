@@ -528,7 +528,7 @@
                 </div>
             </div>
         </div>
-        <h3 data-aos="fade-up" class="text-center tracking-widest fw-caviar text-3xl text-white">
+        <h3 data-aos="fade-up" class="text-center md:mt-16 tracking-widest fw-caviar text-3xl text-white">
             Digestifs / Liqueurs
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:my-8 my-16">
