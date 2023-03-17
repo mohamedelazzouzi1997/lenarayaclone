@@ -59,11 +59,12 @@
                 Vous pouvez directement réserver via le formulaire ci-dessous !</br>
                 Nous sommes ouverts tous les soirs de 19h30 à 02h sauf Lundi.</p>
             <div class="text-white text-center mx-auto">
-                <h2 class="uppercase my-3 mt-3 text-start text-4xl font-sans font-semibold text-orange-300">
+                <h2 class="uppercase text-start text-2xl font-sans font-semibold text-orange-300">
                     CONTACT
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <form action="{{ route('reservation.store') }}" method="post" class="space-y-5 font-sans">
+                <div class="">
+                    <form action="{{ route('reservation.store') }}" method="post"
+                        class="grid grid-cols-1 md:grid-cols-2 gap-4 space-y-1 font-sans">
 
                         @csrf
                         <input type="hidden" name="origin" value="{{ $origin }}">
@@ -76,8 +77,32 @@
                         @error('name')
                             <span class="text-red-500 mt-2 float-left">{{ $message }}</span>
                         @enderror
+
                         <input name="name" placeholder="Nom Complete(*)"
                             class="bg-black w-full border border-orange-300 px-3 py-3 text-white" type="text">
+                        <div class="hidden md:block text-center space-y-1 md:text-lg md:row-span-6">
+                            <iframe class="w-full md:h-[300px]"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1740.5926524141705!2d-7.991725911754402!3d31.68317732857919!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafed918fc3d9b7%3A0x24260ac7b8ddecf5!2sLe%20Naraya!5e1!3m2!1sen!2sma!4v1678099119354!5m2!1sen!2sma"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <p class="text-md font-semibold text-white text-center">
+                                <i class="fa-solid fa-location-dot text-fuchsia-900"></i> Route des Jardins de la Palmeraie,
+                                Marrakech, Maroc.
+                            </p>
+                            <div class="text-center mx-auto">
+                                <p data-aos="fade-down" class="text-fuchsia-900 font-semibold text-3xl text-start fw-JOSEF">
+                                    INFOLINE
+                                </p>
+                                <ul data-aos="fade-down" class="text-start text-white">
+                                    <li class="text-lg font-semibold"><i
+                                            class="fa-solid text-fuchsia-900  fa-phone mr-5 "></i><a
+                                            href="tel:+212669334334">+212 669 33 43 34</a></li>
+                                    <li class="text-lg font-semibold"><i
+                                            class="fa-solid  fa-at mr-5 text-fuchsia-900 "></i>booking@lenaraya.com
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         @error('email')
                             <span class="text-red-500 mt-2 float-left">{{ $message }}</span>
                         @enderror
@@ -88,7 +113,7 @@
                         @enderror
                         <input name="phone" placeholder="Téléphone(*)"
                             class="bg-black w-full border border-orange-300 px-3 py-3 text-white" type="text">
-                        <h2 class="uppercase my-1 mt-3 text-start font-semibold text-4xl font-sans text-orange-300">
+                        <h2 class="uppercase  text-start font-semibold text-2xl font-sans text-orange-300">
                             RÉSERVEZ UNE TABLE
                         </h2>
                         @error('date')
@@ -106,40 +131,37 @@
                                 <option value="{{ $i }}">{{ $i }} Personne</option>
                             @endfor
                         </select>
-                        <h2 class="uppercase font-semibold my-1 mt-3 text-start text-4xl font-sans text-orange-300">
+                        <h2 class="uppercase font-semibold text-start text-2xl font-sans text-orange-300">
                             Message
                         </h2>
-                        <textarea class="bg-black w-full border border-orange-300 px-3 py-3 text-white w-full" name="message" id=""
-                            cols="30" rows="10" placeholder="Message"></textarea>
+                        <textarea class="bg-black md:col-span-2 w-full border border-orange-300 px-3 py-3 text-white " name="message"
+                            id="" cols="30" rows="10" placeholder="Message"></textarea>
                         <button type="submit"
                             class="border border-orange-300 text-white bg-gray-700 hover:text-black py-2 px-5 float-left rounded">ENVOYER</button>
-                    </form>
-
-                    <div class="text-center space-y-10 md:text-2xl mb-5">
-                        <iframe class="w-full"
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1740.5926524141705!2d-7.991725911754402!3d31.68317732857919!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafed918fc3d9b7%3A0x24260ac7b8ddecf5!2sLe%20Naraya!5e1!3m2!1sen!2sma!4v1678099119354!5m2!1sen!2sma"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <p class="text-md font-semibold text-white text-center mt-5">
-                            <i class="fa-solid fa-location-dot text-fuchsia-900"></i> Route des Jardins de la Palmeraie,
-                            Marrakech, Maroc.
-                        </p>
-                        <div class="text-center mx-auto">
-                            <p data-aos="fade-down"
-                                class="text-fuchsia-900 font-semibold text-3xl text-start my-4 fw-JOSEF">
-                                INFOLINE
+                        <div class="md:hidden text-center space-y-1 md:text-lg md:row-span-6">
+                            <iframe class="w-full md:h-[300px]"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1740.5926524141705!2d-7.991725911754402!3d31.68317732857919!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafed918fc3d9b7%3A0x24260ac7b8ddecf5!2sLe%20Naraya!5e1!3m2!1sen!2sma!4v1678099119354!5m2!1sen!2sma"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <p class="text-md font-semibold text-white text-center">
+                                <i class="fa-solid fa-location-dot text-fuchsia-900"></i> Route des Jardins de la Palmeraie,
+                                Marrakech, Maroc.
                             </p>
-                            <ul data-aos="fade-down" class="text-start text-white">
-                                <li class="text-2xl font-semibold"><i
-                                        class="fa-solid text-fuchsia-900  fa-phone mr-5 "></i><a
-                                        href="tel:+212669334334">+212 669 33 43 34</a></li>
-                                <li class="text-2xl font-semibold"><i
-                                        class="fa-solid  fa-at mr-5 text-fuchsia-900 "></i>booking@lenaraya.com
-                                </li>
-                            </ul>
+                            <div class="text-center mx-auto">
+                                <p data-aos="fade-down" class="text-fuchsia-900 font-semibold text-3xl text-start fw-JOSEF">
+                                    INFOLINE
+                                </p>
+                                <ul data-aos="fade-down" class="text-start text-white">
+                                    <li class="text-lg font-semibold"><i
+                                            class="fa-solid text-fuchsia-900  fa-phone mr-5 "></i><a
+                                            href="tel:+212669334334">+212 669 33 43 34</a></li>
+                                    <li class="text-lg font-semibold"><i
+                                            class="fa-solid  fa-at mr-5 text-fuchsia-900 "></i>booking@lenaraya.com
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-
+                    </form>
                 </div>
             </div>
         </div>

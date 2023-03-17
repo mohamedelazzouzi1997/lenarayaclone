@@ -1,6 +1,6 @@
 <footer class="px-6 md:px-20 bg-black py-3">
     <div class="grid grid-cols-1 md:grid-cols-2">
-        <div class="space-x-5 text-start ">
+        <div class="space-x-5 text-center md:text-start ">
             <a href="https://www.facebook.com/profile.php?id=100033986726365"><i
                     class="fa-brands text-fuchsia-900 text-2xl hover:text-white fa-facebook"></i></a>
             <a href="https://www.instagram.com/narayamarrakech/"><i
@@ -12,7 +12,7 @@
                 <i class="fa text-fuchsia-900 text-2xl hover:text-white  fa-tripadvisor"></i>
             </a>
         </div>
-        <div class="text-end">
+        <div class="text-center md:text-end">
             <a href="#" class="text-sm text-fuchsia-900 hover:text-white font-extrabold">© 2021 LE NARAYA
                 MARRAKECH</a>
         </div>
