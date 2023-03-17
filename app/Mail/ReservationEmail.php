@@ -34,7 +34,7 @@ class ReservationEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('mail@leblokkmail.com', 'Le Naraya'),
+            // from: new Address('mail@leblokkmail.com', 'Le Naraya'),
             subject: 'Reservation Le NARAYA',
         );
     }

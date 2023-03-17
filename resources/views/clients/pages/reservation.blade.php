@@ -67,19 +67,20 @@
                     CONTACT
                 </h2>
                 <div class="">
+                    @if (Session::has('success'))
+                        <div class="text-green-500 text-center bg-black px-3 py-2">
+                            <i class="fa-regular fa-circle-check"></i> {{ Session::get('success') }}
+                        </div>
+                    @endif
                     <form action="{{ route('reservation.store') }}" method="post"
                         class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4 font-sans">
 
                         @csrf
                         <input type="hidden" name="origin" value="{{ $origin }}">
 
-                        @if (Session::has('success'))
-                            <div class="text-green-500 text-center bg-black px-3 py-2">
-                                <i class="fa-regular fa-circle-check"></i> {{ Session::get('success') }}
-                            </div>
-                        @endif
 
-                        <input name="name" placeholder="Nom Complete(*)"
+
+                        <input name="name" placeholder="Nom Complete(*)" value="{{ old('name') }}"
                             class="bg-black w-full border border-orange-300 @error('name') border-red-600 @enderror  px-3 py-2 text-white"
                             type="text">
 
@@ -106,12 +107,12 @@
                                 </ul>
                             </div>
                         </div>
-                        <input name="email" placeholder="Email(*)"
-                            class="bg-black w-full border border-orange-300 @error('name') border-red-600 @enderror px-3 py-2 text-white"
+                        <input name="email" placeholder="Email(*)" value="{{ old('email') }}"
+                            class="bg-black w-full border border-orange-300 @error('email') border-red-600 @enderror px-3 py-2 text-white"
                             type="text">
 
-                        <input name="phone" placeholder="Téléphone(*)"
-                            class="bg-black w-full border border-orange-300 @error('name') border-red-600 @enderror px-3 py-2 text-white"
+                        <input name="phone" placeholder="Téléphone(*)" value="{{ old('phone') }}"
+                            class="bg-black w-full border border-orange-300 @error('phone') border-red-600 @enderror px-3 py-2 text-white"
                             type="text">
 
                         <h2
@@ -119,12 +120,12 @@
                             RÉSERVEZ UNE TABLE
                         </h2>
 
-                        <input id="datepicker" name="date" value="{{ old('date') }}"
-                            class="bg-black w-full border border-orange-300 @error('name') border-red-600 @enderror px-3 py-2 text-white"
-                            type="date">
+                        <input id="datepicker" name="date" value="{{ old('date') }}" placeholder="Date(*)"
+                            class="bg-black w-full border border-orange-300 @error('date') border-red-600 @enderror px-3 py-2 text-white"
+                            type="text">
 
                         <select name="number_of_persons"
-                            class="bg-black w-full border border-orange-300 @error('name') border-red-600 @enderror px-3 py-2 text-white"
+                            class="bg-black w-full border border-orange-300 @error('number_of_persons') border-red-600 @enderror px-3 py-2 text-white"
                             id="">
 
                             @for ($i = 1; $i <= 20; $i++)
