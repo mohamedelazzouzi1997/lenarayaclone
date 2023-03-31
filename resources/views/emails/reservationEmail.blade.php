@@ -33,7 +33,7 @@
         }
 
         table td.header {
-            background-color: rgb(73, 192, 73);
+            background-color: #89375F;
             font-size: 18px;
             font-weight: bold;
             text-align: center;
@@ -84,7 +84,7 @@
 </head>
 
 <body>
-    <div style="background-color: rgb(73, 192, 73); padding:50px 150px">
+    <div style="background-color: #89375F; padding:50px 150px">
         @if ($status == 'confirm')
             <table>
                 <tr>
