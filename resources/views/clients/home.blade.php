@@ -58,7 +58,7 @@
                         </h3>
                     </div>
                     <div data-aos="fade-down"
-                        class="text-lg text-start leading-10 my-5 px-3 fw-caviar text-white  font-semibold">
+                        class="text-lg text-center leading-10 my-5 px-3 fw-caviar text-white  font-semibold">
                         Avis aux amateurs de mixologie, et de design, le barman vous concocte avec expertise des
                         Cocktails et rafraîchissements en tout genre.
                     </div>
@@ -131,7 +131,7 @@
                         </h3>
                     </div>
                     <div data-aos="fade-down"
-                        class="text-lg text-start px-3 leading-10 my-5 fw-caviar text-white  font-semibold">
+                        class="text-lg text-center px-3 leading-10 my-5 fw-caviar text-white  font-semibold">
                         Passez la soirée à danser et a siroter mojito sur mojito au rythme des sons électro présentés
                         par notre DJ résident.
                     </div>

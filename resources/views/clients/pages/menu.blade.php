@@ -364,14 +364,14 @@
                     <div class="space-y-5 fw-caviar">
                         <div class="">
                             <p class="uppercase text-orange-300 text-lg  font-semibold">
-                                <span>Corona</span><span class="float-right">05 / 1300 </span>
+                                <span>Bombay Gin</span><span class="float-right">105 / 1300 </span>
                             </p>
                         </div>
 
                         <div class="">
                             <p class="uppercase text-orange-300 text-lg  font-semibold">
                                 <span>
-                                    Casablanca / Heineken
+                                    Hendrick's
                                 </span><span class="float-right">105 / 1300 </span>
                             </p>
 
@@ -380,7 +380,7 @@
                         <div class="">
                             <p class="uppercase text-orange-300 text-lg  font-semibold">
                                 <span>
-                                    Bière pression 33cl
+                                    Gin Gordon's
                                 </span><span class="float-right">90 / 110 </span>
                             </p>
 
