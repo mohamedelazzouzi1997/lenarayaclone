@@ -47,7 +47,7 @@
         });
     @endphp
     <div class="mt-10">
-        <h1 class="text-center">BOOKINGS</h1>
+        <h1 class="text-center text-3xl font-semibold mb-3">BOOKINGS</h1>
         <div class="col-lg-12">
             <div class="card">
 

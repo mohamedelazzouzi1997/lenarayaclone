@@ -56,68 +56,26 @@
             <div class="card">
 
                 <div class="body shadow-2xl px-20 ">
-                    <!-- <div class="row clearfix justify-center space-x-3 my-4">
-                            @foreach ($booking_counts as $key => $bokking)
-    @if ($key == 'pending')
-    <div class="col-lg-3 col-md-6 col-sm-6 bg-red-200">
-                                        <div class="state_w1 mb-1 mt-1">
-                                            <div class="d-flex justify-content-center">
-                                                <div>
-                                                    <h5 class="text-center">{{ $bokking }}</h5>
-                                                    <span><i class="fa-solid fa-clock text-yellow-600"></i>
-                                                        {{ $key }}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-@elseif($key == 'declined')
-    <div class="col-lg-3 col-md-6 col-sm-6 bg-yellow-200">
-                                        <div class="state_w1 mb-1 mt-1">
-                                            <div class="d-flex justify-content-center">
-                                                <div>
-                                                    <h5 class="text-center">{{ $bokking }}</h5>
-                                                    <span><i class="fa-solid fa-x text-red-600"></i> {{ $key }}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-@elseif($key == 'confirmed')
-    <div class="col-lg-3 col-md-6 col-sm-6 bg-teal-200">
-                                        <div class="state_w1 mb-1 mt-1">
-                                            <div class="d-flex justify-content-center">
-                                                <div>
-                                                    <h5 class="text-center">{{ $bokking }}</h5>
-                                                    <span><i class="fa-solid fa-square-check text-green-800"></i>
-                                                        {{ $key }}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-    @endif
-    @endforeach
 
-                        </div> -->
-                    <form id="allEventForm" action="{{ route('reservation.destroy') }}" method="post" autocomplete="off">
+                    <form id="allEventForm" action="{{ route('reservation.hard.delete') }}" method="post"
+                        autocomplete="off">
                         @csrf
                         @method('DELETE')
-                        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 mb-3">
-                                <div class="text-start">
-                                    <button type="button" data-toggle="modal" data-target="#exportBooking"
-                                        class="px-3 py-2 bg-slate-900 shadow-xl hover:bg-slate-800 text-white rounded ">Export
-                                    </button>
-                                    <button disabled id="deleteEventButton" name="deleteEventButton" type="submit"
-                                        class="btn shadow-xl bg-red-500 btn-danger waves-effect"><i
-                                            class="zmdi zmdi-delete"></i>
-                                        Supprimé</button>
-                                </div>
-                            </div> -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 mb-3">
+                            <div class="text-start">
+                                <button disabled id="deleteEventButton" name="deleteEventButton" type="submit"
+                                    class="btn shadow-xl bg-red-500 btn-danger waves-effect"><i
+                                        class="zmdi zmdi-delete"></i>
+                                    Supprimé</button>
+                            </div>
+                        </div>
 
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
                                     <tr>
-                                        <!-- <th data-orderable="false"> <input class="text-blue-900 rounded" id="makeAllChecked"
-                                                    type="checkbox" name="checkallbox"></th> -->
+                                        <th data-orderable="false"> <input class="text-blue-900 rounded" id="makeAllChecked"
+                                                type="checkbox" name="checkallbox"></th>
                                         <th>Date</th>
                                         <th>ID</th>
                                         <th>Nom</th>
@@ -135,11 +93,11 @@
                                         confirm
                                         @else
                                         pending @endif">
-                                            <!-- <td>
-                                                    <input class="evenCheckBox text-blue-900 rounded" type="checkbox"
-                                                        @checked(false) name="bookings[]"
-                                                        value="{{ $res->id }}">
-                                                </td> -->
+                                            <td>
+                                                <input class="evenCheckBox text-blue-900 rounded" type="checkbox"
+                                                    @checked(false) name="bookings[]"
+                                                    value="{{ $res->id }}">
+                                            </td>
                                             <td>{{ $res->date->format('F d, Y') . ' ' . $res->time }}</td>
                                             <td><a
                                                     href="{{ route('reservation.show', $res->id) }}">#{{ $res->id }}</a>

@@ -144,7 +144,12 @@ class ReservationController extends Controller
         session()->flash('delete','Rservation a été supprimé avec succée');
         return to_route('dashboard');
     }
+    public function hard_destroy(Request $request){
+        $res = Resevation::whereIn('id',$request->bookings)->delete();
 
+        session()->flash('delete','Rservation a été supprimé permanent avec succée');
+        return back();
+    }
 
     public function edit($id){
         $res = Resevation::findOrfail($id);
