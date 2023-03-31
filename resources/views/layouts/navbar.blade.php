@@ -1,6 +1,6 @@
         <nav id="navbar-header"
             class="navbar navbar-expand-lg md:fixed md:top-0 md:right-0 md:left-0 bg-dark md:flex z-40 border-b border-orange-300 md:border-none">
-            <div class="container justify-content-center opacity-100">
+            <div class="container justify-content-center opacity-100 pr-4">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="lnr lnr-menu"><i class="fa-solid fa-bars text-4xl text-orange-300"></i></span>

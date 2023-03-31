@@ -32,7 +32,7 @@
         $img = 'Rectangle-13-copie-1.png';
     @endphp
     <div id="topdiv"
-        class="px-5 slide_photo flex  bg-no-repeat justify-center items-center relative md:px-48 h-[400px] md:h-[650px] bg-cover bg-bottom "
+        class="px-5 slide_photo flex  bg-no-repeat justify-center items-center relative md:px-48 h-[350px] md:h-[650px]  bg-cover bg-bottom "
         style="background-image: url('{{ asset('images/img-menu-2.jpg') }}')">
 
     </div>
@@ -198,7 +198,7 @@
                 <div class="text-center">
                     <img class="mx-auto block rounded" src="{{ asset('images/unnamed-file-825x1024.jpg') }}"
                         alt="Calque-100">
-                    <div class="text-start fw-caviar mt-3">
+                    <div class="text-start fw-caviar mt-3 hidden md:block">
                         <p class="uppercase text-orange-300 text-lg  font-semibold">
                             <span>
                                 Orient Blues
@@ -216,6 +216,16 @@
                 <div class="md:w-full">
 
                     <div class="fw-caviar">
+                        <div class=" md:hidden">
+                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                                <span>
+                                    Orient Blues
+                                </span><span class="float-right">120</span>
+                            </p>
+                            <p class="text-white text-md leading-8">
+                                Vodka, fleur d'orangé, curacao bleu, Miel, banane
+                            </p>
+                        </div>
                         <div class="">
                             <p class="uppercase text-orange-300 text-lg  font-semibold">
                                 <span>
@@ -466,13 +476,21 @@
                                 </span><span class="float-right">120 /1400</span>
                             </p>
                         </div>
+                        <div class=" md:hidden">
+                            <p class="uppercase text-orange-300 mb-3 text-lg  font-semibold">
+                                <span>
 
+                                    Red label
+
+                                </span><span class="float-right">90 /1100 </span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="text-center flex justify-center items-center">
                 <div class="text-center">
-                    <div class="text-start fw-caviar mt-3">
+                    <div class="text-start fw-caviar mt-3 md:block hidden">
                         <p class="uppercase text-orange-300 mb-3 text-lg  font-semibold">
                             <span>
 
@@ -541,7 +559,7 @@
 
                     <div class="space-y-5 fw-caviar">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 md:text-lg text-sm  font-semibold">
                                 <span>
 
                                     Marie Brizard / Amaretto
@@ -551,7 +569,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 md:text-lg text-sm  font-semibold">
                                 <span>
                                     Disaronno / Poire Williams /Get 27
                                 </span><span class="float-right">90 /900 </span>
@@ -560,7 +578,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 md:text-lg text-sm  font-semibold">
                                 <span>
                                     Sambuca / Fernet Branca
                                 </span><span class="float-right">90 /900 </span>
@@ -818,7 +836,7 @@
 
                     <div class="space-y-6 fw-caviar">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
                                     Rice Pearl au Fromage Pané
                                 </span><span class="float-right">75</span>
@@ -827,7 +845,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
 
                                     Chirashi saumon mangue
@@ -836,7 +854,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
                                     Fingers food
                                 </span><span class="float-right">80</span>
@@ -847,7 +865,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
                                     Chèvre chaud braisé
                                 </span><span class="float-right">105</span>
@@ -858,7 +876,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
                                     Assiette de saumon fumé
                                 </span><span class="float-right">145</span>
@@ -867,7 +885,7 @@
                                 Crème fouettée </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
 
                                     Burrata tomates cerises
@@ -878,7 +896,7 @@
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
                                     Nems au Poulet
                                 </span><span class="float-right">85</span>
@@ -893,7 +911,7 @@
 
                     <div class="space-y-5 fw-caviar">
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
                                     Foie gras aux fruits secs
                                 </span><span class="float-right">160</span>
@@ -902,7 +920,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
 
                                     Naraya Shrimp Spicy
@@ -911,7 +929,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
 
                                     Général TAO
@@ -923,7 +941,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
 
                                     Carpaccio de saumon
@@ -936,7 +954,7 @@
                         </div>
 
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
                                     Briwates aux Fromages
                                 </span><span class="float-right">95</span>
@@ -944,7 +962,7 @@
 
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
 
                                     Duo tartare de saumon, avocat
@@ -953,7 +971,7 @@
 
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
                                     Wok de boeuf et légumes
                                 </span><span class="float-right">150</span>
@@ -963,7 +981,7 @@
                             </p>
                         </div>
                         <div class="">
-                            <p class="uppercase text-orange-300 text-lg  font-semibold">
+                            <p class="uppercase text-orange-300 text-sm md:text-lg  font-semibold">
                                 <span>
                                     Poke bowl au poulet
                                 </span><span class="float-right">110</span>

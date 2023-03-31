@@ -26,6 +26,9 @@
         </div>
 
     </div>
+    <div class="px-3 md:hidden text-center text-white mt-8 fw-caviar text-lg">
+        La réouverture après la fin du Ramadan
+    </div>
     <div class="px-6 md:px-40  mt-8 grid grid-cols-1 md:grid-cols- gap-y-10">
         <div class="text-center">
             <div class="md:hidden">
@@ -33,8 +36,8 @@
 
                     welcome
                 </h3>
-                <img class="mx-auto mb-5 w-[25%] " src="{{ asset('images/line2.png') }}" alt="">
-                <h3 data-aos="fade-up" class="text-center uppercase text-5xl my-1 font-semibold text-white font-sans">
+                <img class="mx-auto my-3 w-[25%] " src="{{ asset('images/line2.png') }}" alt="">
+                <h3 data-aos="fade-up" class="text-center uppercase text-5xl my-3 font-semibold text-white font-sans">
 
                     DRINK
                 </h3>
@@ -50,7 +53,7 @@
 
                             welcome
                         </h3>
-                        <img class="mx-auto mb-5 w-[15%] " src="{{ asset('images/line2.png') }}" alt="">
+                        <img class="mx-auto mb-6 w-[15%] " src="{{ asset('images/line2.png') }}" alt="">
                         <h3 data-aos="fade-up"
                             class="text-center uppercase text-5xl my-1 font-semibold text-white font-sans">
 

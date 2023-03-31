@@ -76,7 +76,7 @@ class ReservationController extends Controller
             'message'=> $request->message ,
             'origin'=> $origin_to_store,
         ]);
-        \session()->flash('success','Merci votre demande de réservation est en attente de confirmation. Les mises à jour seront envoyées à l\'adresse e-mail que vous avez fournie.');
+        \session()->flash('success','Merci, votre demande de réservation est en attente de confirmation. Les mises à jour seront envoyées à l\'adresse e-mail que vous avez fournie.');
             Mail::to($request->email)->send(new ReservationEmail($res,'reserve','no message'));
         return back();
     }

@@ -54,7 +54,8 @@
             <h2 class=" my-4 text-4xl font-medium tracking-widest font-sans text-orange-300">
                 RESERVATION
             </h2>
-            <p class="text-center fw-caviar font-thin tracking-wider mb-4 leading-10 text-sm md:w-1/2 mx-auto text-white">
+            <p
+                class="text-center fw-caviar font-thin tracking-wider text-lg mb-4 leading-10 md:text-sm md:w-1/2 mx-auto text-white">
                 Vous
                 souhaitez réserver
                 une
@@ -80,7 +81,7 @@
 
 
 
-                        <input name="name" placeholder="Nom Complete(*)" value="{{ old('name') }}"
+                        <input name="name" placeholder="Nom Complet(*)" value="{{ old('name') }}"
                             class="bg-black w-full border border-orange-300 @error('name') border-red-600 @enderror  px-3 py-2 text-white"
                             type="text">
 
@@ -148,20 +149,18 @@
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1740.5926524141705!2d-7.991725911754402!3d31.68317732857919!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafed918fc3d9b7%3A0x24260ac7b8ddecf5!2sLe%20Naraya!5e1!3m2!1sen!2sma!4v1678099119354!5m2!1sen!2sma"
                                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            <p class="text-md font-semibold text-white text-center">
+                            <p class="text-sm font-semibold text-white text-center">
                                 <i class="fa-solid fa-location-dot text-fuchsia-900"></i> Route des Jardins de la Palmeraie,
                                 Marrakech, Maroc.
                             </p>
                             <div class="text-center mx-auto">
-                                <p data-aos="fade-down" class="text-fuchsia-900 font-semibold text-3xl text-start fw-JOSEF">
-                                    INFOLINE
-                                </p>
+
                                 <ul data-aos="fade-down" class="text-start text-white">
-                                    <li class="text-lg font-semibold"><i
-                                            class="fa-solid text-fuchsia-900  fa-phone mr-5 "></i><a
+                                    <li class="text-sm font-semibold"><i
+                                            class="fa-solid text-fuchsia-900  fa-phone mr-1 "></i><a
                                             href="tel:+212669334334">+212 669 33 43 34</a></li>
-                                    <li class="text-lg font-semibold"><i
-                                            class="fa-solid  fa-at mr-5 text-fuchsia-900 "></i>booking@lenaraya.com
+                                    <li class="text-sm font-semibold"><i
+                                            class="fa-solid  fa-at mr-1 text-fuchsia-900 "></i>booking@lenaraya.com
                                     </li>
                                 </ul>
                             </div>

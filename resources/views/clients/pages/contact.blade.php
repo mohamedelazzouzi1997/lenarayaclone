@@ -40,7 +40,7 @@
             <div class="text-white text-center mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <form data-aos="fade-down" action="" class="space-y-2 font-sans">
-                        <input placeholder="Nom Complete(*)"
+                        <input placeholder="Nom Complet(*)"
                             class="bg-black w-full border border-orange-300 px-3 py-3 text-white" type="text">
                         <input placeholder="Email(*)" class="bg-black w-full border border-orange-300 px-3 py-3 text-white"
                             type="text">
