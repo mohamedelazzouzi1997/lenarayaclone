@@ -1,6 +1,6 @@
         <nav id="navbar-header"
             class="navbar navbar-expand-lg md:fixed md:top-0 md:right-0 md:left-0 bg-dark md:flex z-40 border-b border-orange-300 md:border-none">
-            <div class="container justify-content-center opacity-100 pr-4">
+            <div class="justify-content-center opacity-100 w-full">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="lnr lnr-menu"><i class="fa-solid fa-bars text-4xl text-orange-300"></i></span>
@@ -18,29 +18,33 @@
                             </a>
                         </li>
                         <div
-                            class="d-flex w-full opacity-100 justify-content-center flex-lg-row flex-column md:space-x-20 font-semibold text-xl uppercase">
-                            <li class="nav-item active">
+                            class="d-flex w-full opacity-100 justify-content-center flex-lg-row flex-column font-semibold text-xl sm:space-x-8 md:space-x-16 uppercase">
+                            <li class="nav-item active flex justify-center items-center">
                                 <a class="nav-link link-hover text-white @if (request()->route()->getName() == 'home.index') text-orange-300 @endif "
                                     href="/">LE NARAYA <span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item active">
+                            <li class="nav-item active flex justify-center items-center">
                                 <a class="nav-link link-hover text-white  @if (request()->route()->getName() == 'menu') text-orange-300 @endif hover:text-orange-300"
-                                    href="{{ route('menu') }}">MENUS</a>
+                                    href="{{ route('menu') }}">MENU</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item flex justify-center items-center">
                                 <a class="nav-link link-hover text-white  @if (request()->route()->getName() == 'reservation') text-orange-300 @endif hover:text-orange-300"
                                     href="{{ route('reservation') }}">RESERVATION</a>
                             </li>
-                            <li class="nav-item active">
+                            <li class="nav-item md:flex md:justify-center md:items-center hidden">
+                                <a class="nav-link" href="{{ route('reservation') }}"><img class="mx-auto"
+                                        width="125px" src="{{ asset('images/logo.png') }}" alt="logo naraya"></a>
+                            </li>
+                            <li class="nav-item active flex justify-center items-center">
                                 <a class="nav-link link-hover  @if (request()->route()->getName() == 'contact') text-orange-300 @endif text-white"
                                     href="{{ route('contact') }}">CONTACTEZ-NOUS<span
                                         class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item active">
+                            <li class="nav-item active flex justify-center items-center">
                                 <a class="nav-link link-hover text-white hover:text-orange-300"
                                     href="https://dash.lenaraya.com/partenaire/login">Partenaire</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item flex justify-center items-center">
                                 <a class="nav-link link-hover text-white hover:text-orange-300"
                                     href="https://dash.lenaraya.com/agence/login">Agence</a>
                             </li>

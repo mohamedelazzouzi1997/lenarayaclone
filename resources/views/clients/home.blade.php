@@ -24,7 +24,13 @@
         <div class="absolute bottom-0 right-0 left-0 top-0 bg-black opacity-50">
 
         </div>
-
+        <p class="text-5xl text-white uppercase tracking-wider z-20 text-center leading-relaxed">
+            C’est plus qu'un bar, <br>
+            c'est <span class=" font-normal"><strong>une expérience de vie</strong></span>.
+        </p>
+        <p class="absolute bottom-16 text-3xl tracking-widest text-white uppercase z-20 text-center leading-relaxed">
+            Venez découvrir notre univers de fêtes
+        </p>
     </div>
     <div class="px-3 md:hidden text-center text-white mt-8 fw-caviar text-lg">
         La réouverture après la fin du Ramadan
